@@ -1,0 +1,9 @@
+Language: Cpp
+BasedOnStyle: LLVM
+IndentWidth: 2
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: All
+PenaltyBreakAssignment: 2
+PenaltyReturnTypeOnItsOwnLine: 200
+PointerAlignment: Left
+SpaceBeforeParens: ControlStatements
