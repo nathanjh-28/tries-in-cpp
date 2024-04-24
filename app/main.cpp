@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../code/LinkedList.h"
+#include "../code/Tries.h"
 
 using namespace std;
 

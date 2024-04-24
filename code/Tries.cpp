@@ -8,55 +8,55 @@
 //  lab, do not count time reading or watching videos>
 //
 
-#include "LinkedList.h"
+#include "Tries.h"
 
 // constructor, initialize class variables and pointers here if need.
-LinkedList::LinkedList() {
+Tries::Tries() {
   // Your code here
 }
 
 // deconstructor,
-LinkedList::~LinkedList() {}
+Tries::~Tries() {}
 
-node* LinkedList::init_node(int data) {
+node* Tries::init_node(int data) {
   node* ret(new node);
   // Your code here
   return ret;
 }
 
-string LinkedList::report() {
+string Tries::report() {
   string ret;
   // Your code here
   return ret;
 }
 
-void LinkedList::append_data(int data) {
+void Tries::append_data(int data) {
   // Your code here
 }
 
-void LinkedList::append(node* new_node) {
+void Tries::append(node* new_node) {
   // Your code here
 }
 
-void LinkedList::insert_data(int offset, int data) {
+void Tries::insert_data(int offset, int data) {
   // Your code here
 }
 
-void LinkedList::insert(int offset, node* new_node) {
+void Tries::insert(int offset, node* new_node) {
   // Your code here
 }
 
-void LinkedList::remove(int offset) {
+void Tries::remove(int offset) {
   // Your code here
 }
 
-int LinkedList::size() {
+int Tries::size() {
   int ret;
   // Your code here
   return ret;
 }
 
-bool LinkedList::contains(int data) {
+bool Tries::contains(int data) {
   bool ret;
   // Your code here
   return ret;
@@ -64,8 +64,8 @@ bool LinkedList::contains(int data) {
 
 // This function is implemented for you
 // It returns the top pointer
-node* LinkedList::get_top() { return top_ptr_; }
+node* Tries::get_top() { return top_ptr_; }
 
 // This function is implemented for you
 // It sets a given pointer as the top pointer
-void LinkedList::set_top(node* top_ptr) { top_ptr_ = top_ptr; }
+void Tries::set_top(node* top_ptr) { top_ptr_ = top_ptr; }

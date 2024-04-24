@@ -1,7 +1,7 @@
 // If you change anything in this file, your changes will be ignored
 // in your homework submission.
 // Chekout TEST_F functions bellow to learn what is being tested.
-#include "../code/LinkedList.h"
+#include "../code/Tries.h"
 #include <gtest/gtest.h>
 
 #include <cmath>
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-class test_LinkedList : public ::testing::Test {
+class test_Tries : public ::testing::Test {
 protected:
   // This function runs only once before any TEST_F function
   static void SetUpTestCase() {
@@ -58,11 +58,11 @@ protected:
   static double max_grade;
 };
 
-double test_LinkedList::total_grade = 0;
-double test_LinkedList::max_grade = 38;
+double test_Tries::total_grade = 0;
+double test_Tries::max_grade = 38;
 
-TEST_F(test_LinkedList, TestInitialization) {
-  LinkedList mylist;
+TEST_F(test_Tries, TestInitialization) {
+  Tries mylist;
   ASSERT_FALSE(mylist.get_top()); // expect top to be NULL
   add_points_to_grade(1);
   node* root = mylist.init_node(42);
@@ -85,8 +85,8 @@ node* build_three_node_list_helper(int one, int two, int three) {
   return top;
 }
 
-TEST_F(test_LinkedList, TestReport) {
-  LinkedList mylist;
+TEST_F(test_Tries, TestReport) {
+  Tries mylist;
 
   string exp("");
   ASSERT_EQ("", mylist.report());
@@ -100,8 +100,8 @@ TEST_F(test_LinkedList, TestReport) {
   add_points_to_grade(2);
 }
 
-TEST_F(test_LinkedList, TestAppendData) {
-  LinkedList mylist;
+TEST_F(test_Tries, TestAppendData) {
+  Tries mylist;
   node* top = build_three_node_list_helper(42, 74, 51);
   mylist.set_top(top);
   mylist.append_data(10);
@@ -131,9 +131,9 @@ TEST_F(test_LinkedList, TestAppendData) {
   add_points_to_grade(1);
 }
 
-TEST_F(test_LinkedList, TestAppendNode) {
+TEST_F(test_Tries, TestAppendNode) {
 
-  LinkedList mylist;
+  Tries mylist;
 
   // test appending to empty list
   node* ap_five = mylist.init_node(5);
@@ -185,8 +185,8 @@ bool expect_all_helper(int vals[], int size, node* top) {
   return ret;
 }
 
-TEST_F(test_LinkedList, TestInsertData) {
-  LinkedList mylist;
+TEST_F(test_Tries, TestInsertData) {
+  Tries mylist;
 
   node* threenode = build_three_node_list_helper(30, 20, 10);
   mylist.set_top(threenode); // list is now 30, 20, 10
@@ -210,8 +210,8 @@ TEST_F(test_LinkedList, TestInsertData) {
   add_points_to_grade(1);
 }
 
-TEST_F(test_LinkedList, TestInsertNode) {
-  LinkedList mylist;
+TEST_F(test_Tries, TestInsertNode) {
+  Tries mylist;
 
   node* threenode = build_three_node_list_helper(7, 98, -34);
   mylist.set_top(threenode);
@@ -238,8 +238,8 @@ TEST_F(test_LinkedList, TestInsertNode) {
   add_points_to_grade(1);
 }
 
-TEST_F(test_LinkedList, TestRemove) {
-  LinkedList mylist;
+TEST_F(test_Tries, TestRemove) {
+  Tries mylist;
 
   node* threenode = build_three_node_list_helper(7, 86, 210);
   mylist.set_top(threenode);
@@ -270,8 +270,8 @@ TEST_F(test_LinkedList, TestRemove) {
   add_points_to_grade(1);
 }
 
-TEST_F(test_LinkedList, TestSize) {
-  LinkedList mylist;
+TEST_F(test_Tries, TestSize) {
+  Tries mylist;
   ASSERT_EQ(0, mylist.size());
   add_points_to_grade(2);
 
@@ -281,8 +281,8 @@ TEST_F(test_LinkedList, TestSize) {
   add_points_to_grade(2);
 }
 
-TEST_F(test_LinkedList, TestContains) {
-  LinkedList mylist;
+TEST_F(test_Tries, TestContains) {
+  Tries mylist;
   node* threenode = build_three_node_list_helper(7, 0, -210);
   mylist.set_top(threenode);
 

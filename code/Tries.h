@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H__
-#define LINKEDLIST_H__
+#ifndef TRIES_H__
+#define TRIES_H__
 
 #include <memory>
 #include <string>
@@ -14,16 +14,16 @@ struct node {
 // Linked List Invariant: following the 'next' links must eventually lead to a
 // NULL reference signifying the end of the list. (E.g. no circular references
 // are allowed.)
-class LinkedList {
+class Tries {
 public:
   // Constructor. Initialize class variables and pointers here if need.
   // Initially set top pointer to null.
-  LinkedList();
+  Tries();
 
   // Deconstructor. Can probably leave this empty because we use bare pointers
   // (node*), and you must reclaim heap memory immediately when that memory is
   // no longer used.
-  ~LinkedList();
+  ~Tries();
 
   // Creates a new node structure from heap memory. It points to NULL and holds
   // the provided integer. The function returns a pointer to that new node.
@@ -94,4 +94,4 @@ private:
   // you need
 };
 
-#endif // LINKEDLIST_H__
+#endif // TRIES_H__
