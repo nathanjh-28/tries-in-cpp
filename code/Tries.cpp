@@ -10,16 +10,31 @@
 
 #include "Tries.h"
 
+
+
+
 // constructor, initialize class variables and pointers here if need.
-Tries::Tries() {
+Tries::Tries(set<char> alpha) {
   // Your code here
+  root = init_node("");
+  root->is_root = true;
+  num_words = 0;
+  num_nodes = 0;
+  num_characters = 0;
+  // alphabet will help check valid inputs
+  alphabet = alpha;
 }
 
 // deconstructor,
 Tries::~Tries() {}
 
-node* Tries::init_node(int data) {
-  node* ret(new node);
+trie_node* Tries::init_node(string characters) {
+  trie_node* ret(new trie_node);
+    // default values for trie nodes
+  ret->is_root = false;
+  ret->is_word_end = false;
+  ret->word_count = 0;
+  ret->characters = characters;
   // Your code here
   return ret;
 }
@@ -34,7 +49,7 @@ void Tries::append_data(int data) {
   // Your code here
 }
 
-void Tries::append(node* new_node) {
+void Tries::append(trie_node* new_trie_node) {
   // Your code here
 }
 
@@ -42,7 +57,7 @@ void Tries::insert_data(int offset, int data) {
   // Your code here
 }
 
-void Tries::insert(int offset, node* new_node) {
+void Tries::insert(int offset, trie_node* new_trie_node) {
   // Your code here
 }
 
@@ -62,10 +77,10 @@ bool Tries::contains(int data) {
   return ret;
 }
 
-// This function is implemented for you
-// It returns the top pointer
-node* Tries::get_top() { return top_ptr_; }
+// // This function is implemented for you
+// // It returns the top pointer
+trie_node* Tries::get_root() { return root; }
 
-// This function is implemented for you
-// It sets a given pointer as the top pointer
-void Tries::set_top(node* top_ptr) { top_ptr_ = top_ptr; }
+// // This function is implemented for you
+// // It sets a given pointer as the top pointer
+void Tries::set_root(trie_node* new_root) { root = new_root; }

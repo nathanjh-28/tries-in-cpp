@@ -3,22 +3,27 @@
 
 #include <memory>
 #include <string>
+#include <unordered_map>
+#include <set>
 
 using namespace std;
 
-struct node {
-  int data;   // value of this node
-  node* next; // points to the next node, or NULL if this is the last node.
+struct trie_node {
+  bool is_root;
+  bool is_word_end;
+  int word_count;
+  // this is a map where the key is a string and values are pointers to trienodes
+  unordered_map<string,trie_node*> map;
+  // optional for standard tries but we will store the characters in the node as well.
+  string characters;
 };
 
-// Linked List Invariant: following the 'next' links must eventually lead to a
-// NULL reference signifying the end of the list. (E.g. no circular references
-// are allowed.)
+// maybe invariants go here
 class Tries {
 public:
   // Constructor. Initialize class variables and pointers here if need.
   // Initially set top pointer to null.
-  Tries();
+  Tries(set<char> alphabet);
 
   // Deconstructor. Can probably leave this empty because we use bare pointers
   // (node*), and you must reclaim heap memory immediately when that memory is
@@ -27,7 +32,7 @@ public:
 
   // Creates a new node structure from heap memory. It points to NULL and holds
   // the provided integer. The function returns a pointer to that new node.
-  node* init_node(int data);
+  trie_node* init_node(string characters);
 
   // Creates a space-separated string representing the contents of the list, in
   // the same order they are found beginning from the top of the list. Return
@@ -43,7 +48,7 @@ public:
 
   // Append is the same as AppendData, except we're adding a node, rather than a
   // value.
-  void append(node* new_node);
+  void append(trie_node* new_node);
 
   // InsertData inserts a new node that contains the given data value, so the
   // new node occupies the offset indicated. Any nodes that were already in the
@@ -59,7 +64,7 @@ public:
 
   // This is the same as insert_data, except we're inserting a node, rather than
   // a value. This closely mirrors Append and AppendData.
-  void insert(int offset, node* new_node);
+  void insert(int offset, trie_node* new_node);
 
   // Removes the node indicated by the given offset and frees its memory. For
   // example if our list contains 23, 74, 93, and we remove offset 1, the
@@ -79,16 +84,20 @@ public:
   bool contains(int data);
 
   // This function is implemented for you. Returns the top pointer.
-  node* get_top();
+  trie_node* get_root();
 
   // This is implemented for you. It sets a given pointer as the top pointer.
-  void set_top(node* top_ptr);
+  void set_root(trie_node* root);
 
   // You can declare more public member variables and member functions here if
   // you need them. Implement them in the cpp file.
+  int num_words;
+  int num_nodes;
+  int num_characters;
+  set<char> alphabet;
 
 private:
-  node* top_ptr_;
+  trie_node* root;
 
   // you can add add more private member variables and member functions here if
   // you need
