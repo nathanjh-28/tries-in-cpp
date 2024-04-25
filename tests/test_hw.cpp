@@ -100,6 +100,54 @@ TEST_F(test_Tries, TestInitialization) {
 //   return top;
 // }
 
+trie_node* build_small_trie(){
+  // make a root
+  trie_node* ret(new trie_node);
+  ret->is_root = true;
+
+  // insert "mike"
+  trie_node* m(new trie_node);
+  m->characters = "m";
+  ret->map.insert(make_pair("m",m));
+  trie_node* i(new trie_node);
+  m->map.insert(make_pair("i",i));
+  i->characters = "i";
+  trie_node* k(new trie_node);
+  i->map.insert(make_pair("k",k));
+  i->characters = "k";
+  trie_node* e(new trie_node);
+  k->map.insert(make_pair("e",e));
+  e->characters = "e";
+  e->is_word_end = true;
+  e->word_count = 1;
+
+  // insert "mitch"
+  trie_node* t(new trie_node);
+  i->map.insert(make_pair("t",t));
+  t->characters = "t";
+  trie_node* c(new trie_node);
+  c->characters = "c";
+  t->map.insert(make_pair("c",c));
+  trie_node* h(new trie_node);
+  c->map.insert(make_pair("h",h));
+  h->characters = "h";
+  h->is_word_end = true;
+  h->word_count = 1;
+  
+  // insert "max"
+  trie_node* a(new trie_node);
+  m->map.insert(make_pair("a",a));
+  a->characters = "a";
+  trie_node* x(new trie_node);
+  a->map.insert(make_pair("x",x));
+  x->characters = "x";
+  x->is_word_end = true;
+  x->word_count = 1;
+
+
+  return ret;
+}
+
 // TEST_F(test_Tries, TestReport) {
 //   Tries mylist;
 
