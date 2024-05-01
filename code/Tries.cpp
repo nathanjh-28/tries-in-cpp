@@ -42,6 +42,22 @@ trie_node* Tries::init_node(string characters) {
 
 void Tries::insert(string word) {
   // To do
+  auto cursor = root;
+  string c = "";
+  for(int i = 0; i < word.size(); i++){
+    c = word[i];
+    if(cursor->map.find(c) == cursor->map.end()){
+      trie_node* new_node = init_node(c);
+      cursor->map.insert(make_pair(c,new_node));
+      num_characters++;
+      num_nodes++;
+    }
+    cursor = cursor->map.at(c);
+  }
+  cursor->is_word_end = true;
+  cursor->word_count++;
+  num_words++;
+  return;
 }
 
 void Tries::remove(string word) {
@@ -78,6 +94,7 @@ int Tries::size() {
 
 string Tries::report() {
   string ret;
+  
   // To do
   return ret;
 }

@@ -100,22 +100,34 @@ TEST_F(test_Tries, TestInitialization) {
 //   return top;
 // }
 
+trie_node* help_init_node(trie_node* node){
+  node->is_root = false;
+  node->is_word_end = false;
+  node->word_count = 0;
+  return node;
+}
+
 trie_node* build_small_trie(){
   // make a root
   trie_node* ret(new trie_node);
+  ret = help_init_node(ret);
   ret->is_root = true;
 
   // insert "mike"
   trie_node* m(new trie_node);
+  m = help_init_node(m);
   m->characters = "m";
   ret->map.insert(make_pair("m",m));
   trie_node* i(new trie_node);
+  i = help_init_node(i);
   m->map.insert(make_pair("i",i));
   i->characters = "i";
   trie_node* k(new trie_node);
+  k = help_init_node(k);
   i->map.insert(make_pair("k",k));
-  i->characters = "k";
+  k->characters = "k";
   trie_node* e(new trie_node);
+  e = help_init_node(e);
   k->map.insert(make_pair("e",e));
   e->characters = "e";
   e->is_word_end = true;
@@ -123,12 +135,15 @@ trie_node* build_small_trie(){
 
   // insert "mitch"
   trie_node* t(new trie_node);
+  t = help_init_node(t);
   i->map.insert(make_pair("t",t));
   t->characters = "t";
   trie_node* c(new trie_node);
+  c = help_init_node(c);
   c->characters = "c";
   t->map.insert(make_pair("c",c));
   trie_node* h(new trie_node);
+  h = help_init_node(h);
   c->map.insert(make_pair("h",h));
   h->characters = "h";
   h->is_word_end = true;
@@ -136,9 +151,11 @@ trie_node* build_small_trie(){
   
   // insert "max"
   trie_node* a(new trie_node);
+  a = help_init_node(a);
   m->map.insert(make_pair("a",a));
   a->characters = "a";
   trie_node* x(new trie_node);
+  x = help_init_node(x);
   a->map.insert(make_pair("x",x));
   x->characters = "x";
   x->is_word_end = true;
@@ -146,6 +163,66 @@ trie_node* build_small_trie(){
 
 
   return ret;
+}
+
+TEST_F(test_Tries,insert){
+  trie_node* small_trie_root = build_small_trie();
+  set<char> alphabet = createAlphabetSet();
+  Tries my_trie(alphabet);
+  trie_node* my_trie_root = my_trie.get_root();
+
+  my_trie.insert("mike");
+  my_trie.insert("mitch");
+  my_trie.insert("max");
+  
+  // test for "mike"
+  auto x = small_trie_root->map.at("m");
+  auto y = my_trie_root->map.at("m");
+  ASSERT_EQ(x->characters,y->characters);
+
+  x = x->map.at("i");
+  y = y->map.at("i");
+  ASSERT_EQ(x->characters,y->characters);
+
+  x = x->map.at("k");
+  y = y->map.at("k");
+  ASSERT_EQ(x->characters,y->characters);
+
+  x = x->map.at("e");
+  y = y->map.at("e");
+  ASSERT_EQ(x->characters,y->characters);
+  ASSERT_EQ(x->is_word_end,y->is_word_end);
+  ASSERT_EQ(x->word_count,y->word_count);
+
+  // test for "mitch"
+  x = small_trie_root->map.at("m");
+  y = my_trie_root->map.at("m");
+  x = x->map.at("i");
+  y = y->map.at("i");
+  x = x->map.at("t");
+  y = y->map.at("t");
+  ASSERT_EQ(x->characters,y->characters);
+  x = x->map.at("c");
+  y = y->map.at("c");
+  ASSERT_EQ(x->characters,y->characters);
+  x = x->map.at("h");
+  y = y->map.at("h");
+  ASSERT_EQ(x->characters,y->characters);
+  ASSERT_EQ(x->is_word_end,y->is_word_end);
+  ASSERT_EQ(x->word_count,y->word_count);
+
+  // test for "max"
+  x = small_trie_root->map.at("m");
+  y = my_trie_root->map.at("m");
+  x = x->map.at("a");
+  y = y->map.at("a");
+  ASSERT_EQ(x->characters,y->characters);
+  x = x->map.at("x");
+  y = y->map.at("x");
+  ASSERT_EQ(x->characters,y->characters);
+  ASSERT_EQ(x->is_word_end,y->is_word_end);
+  ASSERT_EQ(x->word_count,y->word_count);
+
 }
 
 // TEST_F(test_Tries, TestReport) {
