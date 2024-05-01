@@ -68,9 +68,28 @@ int Tries::word_count(string word){
   return 0;
 }
 
+void autocomplete_recurse(trie_node* subtree, string prefix,vector<string>& word_list){
+  if(subtree->is_word_end){
+    word_list.push_back(prefix);
+  }
+  for(auto i = subtree->map.begin(); i != subtree->map.end(); ++i){
+    autocomplete_recurse(subtree->map.at(i->first),prefix + i->first, word_list);
+  }
+}
+
 vector<string> Tries::autocomplete(string prefix){
-  vector<string> list;
-  return list;
+  vector<string> word_list;
+  trie_node* cursor = root;
+  string c;
+  for(int i = 0; i < prefix.size(); i++){
+    c = prefix[i];
+    if(cursor->map.find(c) == cursor->map.end()){
+      return word_list;
+    }
+    cursor = cursor->map.at(c);
+  }
+  autocomplete_recurse(cursor,prefix,word_list);
+  return word_list;
 }
 
 int Tries::characters(){

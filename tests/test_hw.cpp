@@ -236,6 +236,30 @@ TEST_F(test_Tries,insert){
 
 }
 
+// test remove
+
+TEST_F(test_Tries,autocomplete){
+  set<char> alphabet = createAlphabetSet();
+  Tries my_trie(alphabet);
+
+  my_trie.insert("mike");
+  my_trie.insert("mitch");
+  my_trie.insert("max");
+
+  vector<string> a = my_trie.autocomplete("mi");
+  vector<string> b = {"mitch","mike"};
+  ASSERT_EQ(a,b);
+
+  a = my_trie.autocomplete("m");
+  b = {"max","mitch","mike"};
+  ASSERT_EQ(a,b);
+
+
+  a = my_trie.autocomplete("ma");
+  b = {"max"};
+  ASSERT_EQ(a,b);
+}
+
 // TEST_F(test_Tries, TestReport) {
 //   Tries mylist;
 
