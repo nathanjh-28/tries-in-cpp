@@ -238,6 +238,25 @@ TEST_F(test_Tries,insert){
 
 // test remove
 
+// test word count
+
+TEST_F(test_Tries, word_count){
+  set<char> alphabet = createAlphabetSet();
+  Tries my_trie(alphabet);
+
+  my_trie.insert("mike");
+  my_trie.insert("mitch");
+  my_trie.insert("mitch");
+  my_trie.insert("max");
+  my_trie.insert("max");
+  my_trie.insert("max");
+
+  ASSERT_EQ(my_trie.word_count("mike"),1);
+  ASSERT_EQ(my_trie.word_count("mitch"),2);
+  ASSERT_EQ(my_trie.word_count("max"),3);
+
+}
+
 TEST_F(test_Tries,autocomplete){
   set<char> alphabet = createAlphabetSet();
   Tries my_trie(alphabet);

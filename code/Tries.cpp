@@ -65,7 +65,16 @@ void Tries::remove(string word) {
 }
 
 int Tries::word_count(string word){
-  return 0;
+  trie_node* cursor = root;
+  string c;
+  for(int i = 0; i < word.size(); i++){
+    c = word[i];
+    if(cursor->map.find(c) == cursor->map.end()){
+      return 0;
+    }
+    cursor = cursor->map.at(c);
+  }
+  return cursor->word_count;
 }
 
 void autocomplete_recurse(trie_node* subtree, string prefix,vector<string>& word_list){
