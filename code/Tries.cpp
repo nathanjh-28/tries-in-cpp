@@ -74,11 +74,11 @@ vector<string> Tries::autocomplete(string prefix){
 }
 
 int Tries::characters(){
-  return 0;
+  return num_characters;
 }
 
 int Tries::nodes(){
-  return 0;
+  return num_nodes;
 }
 
 void Tries::clear(){
@@ -87,9 +87,8 @@ void Tries::clear(){
 
 
 int Tries::size() {
-  int ret;
   // To do
-  return ret;
+  return num_words;
 }
 
 string Tries::report() {
