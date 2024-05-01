@@ -172,8 +172,19 @@ TEST_F(test_Tries,insert){
   trie_node* my_trie_root = my_trie.get_root();
 
   my_trie.insert("mike");
+  ASSERT_EQ(my_trie.num_characters,4);
+  ASSERT_EQ(my_trie.num_words,1);
+  ASSERT_EQ(my_trie.num_nodes,4);
+
   my_trie.insert("mitch");
+  ASSERT_EQ(my_trie.num_characters,7);
+  ASSERT_EQ(my_trie.num_words,2);
+  ASSERT_EQ(my_trie.num_nodes,7);
+
   my_trie.insert("max");
+  ASSERT_EQ(my_trie.num_characters,9);
+  ASSERT_EQ(my_trie.num_words,3);
+  ASSERT_EQ(my_trie.num_nodes,9);
   
   // test for "mike"
   auto x = small_trie_root->map.at("m");
