@@ -13,50 +13,31 @@ set <char> createAlphabetSet(){
 
 int main(){
 
-    // Do some printing
-    int var;
-    cout << "Hello World, please enter a number " << endl;
-    cin >> var;
-    cout << "your number was : " << var << endl;
-
     set<char> alphabet = createAlphabetSet();
     Tries my_trie(alphabet);
 
     my_trie.insert("mike");
-    string report = my_trie.report();
-    cout << report << endl;
+    cout << "mike inserted, Report: " << my_trie.report() << endl;
     my_trie.insert("mitch");
-    report = my_trie.report();
-    cout << report << endl;
+    cout << "mitch inserted, Report: " << my_trie.report() << endl;
     my_trie.insert("max");
-    report = my_trie.report();
-    cout << report << endl;
-
-    if(my_trie.contains("mitch") == true){
-        cout << "got mitch" << endl;
-    }
-    if(my_trie.contains("steve") == false){
-        cout << "don't have steve" << endl;
-    }
-
-    cout << "number of words: " << my_trie.num_words << endl;
-    my_trie.remove("mitch");
-    if(my_trie.contains("mitch") == false){
-        cout << "mitch gone" << endl;
-    }
-    cout << "number of words: " << my_trie.num_words << endl;
-
-    cout << my_trie.report() << endl;
-
-
-    // usage, user enters a paragraph or sentence.  
-    // Parse each word and have it insert in to the trie.
-    // cli interface for the methods?
-
-    // how can I visualize trie in list form...
+    cout << "max inserted, Report: " <<my_trie.report() << endl;
     my_trie.insert("steve");
+    cout << "steve inserted, Report: " <<my_trie.report() << endl;
     my_trie.insert("frank");
+    cout << "frank inserted, Report: " <<my_trie.report() << endl;
+
+
+    cout << "number of words: " << my_trie.num_words << endl;
+    cout << "remove mitch" << endl;
+    my_trie.remove("mitch");
+    cout << "number of words: " << my_trie.num_words << endl;
+    cout << "Report: " <<my_trie.report() << endl;
+
+    cout << "Example of printing a node's information:" << endl;
     cout << my_trie.print_node(my_trie.get_root());
+
+    cout << "The End" << endl;
 
     return 0;
 }
