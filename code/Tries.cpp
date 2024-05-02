@@ -185,6 +185,48 @@ bool Tries::contains(string word) {
   }
 }
 
+string Tries::print_node(trie_node* node){
+  
+  string print_string = "";
+
+  if(node->is_root == true){
+    print_string += "This node is the root.\n";
+  }
+  else {
+    print_string += "This node is NOT the root.\n";
+  }
+  if(node->is_word_end == true){
+    print_string += "This node is a word ending node.\n";
+  } else {
+    print_string += "This node is NOT a word ending node.\n";
+  }
+  print_string += "The word count is " + to_string(node->word_count) + ".\n";
+
+  print_string += "The node's characters are '" + node->characters + "'\n";
+
+  print_string += "The node has the following keys in it's map: \n";
+
+  for(auto i = node->map.begin(); i != node->map.end(); ++i){
+    print_string += i->first + "\n";
+  }
+
+  
+
+  
+  return print_string;
+}
+
+// compress trie
+// if a node's parent only has one child, merge the child's 
+// characters with the parent's characters, 
+// replace the parent's map with the child's map
+// decrement number of nodes
+// if child was a word ending node, make the parent a word ending node
+
+// decompress node
+// seperate out and copy the map to the last character
+
+
 trie_node* Tries::get_root() { return root; }
 
 

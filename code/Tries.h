@@ -62,6 +62,9 @@ public:
   // create a string with all the words in the Trie
   string report();
 
+  // print a single node's information
+  string print_node(trie_node* node);
+
   // Returns true if this Trie contains a node with the specified value,
   // false otherwise.
   bool contains(string word);

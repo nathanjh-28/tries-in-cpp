@@ -48,10 +48,14 @@ int main(){
 
     cout << my_trie.report() << endl;
 
-    my_trie.clear();
 
-    cout << "number of words: " << my_trie.num_words << endl;
+    // usage, user enters a paragraph or sentence.  
+    // Parse each word and have it insert in to the trie.
+    // cli interface for the methods?
 
+    // how can I visualize trie in list form...
+
+    cout << my_trie.print_node(my_trie.get_root());
 
     return 0;
 }
