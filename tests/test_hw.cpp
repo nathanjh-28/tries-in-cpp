@@ -71,6 +71,7 @@ protected:
 double test_Tries::total_grade = 0;
 double test_Tries::max_grade = 38;
 
+// test the initialization of a new Trie
 TEST_F(test_Tries, TestInitialization) {
   set <char> alpha = createAlphabetSet();
   Tries my_Tries(alpha);
@@ -89,17 +90,9 @@ TEST_F(test_Tries, TestInitialization) {
   add_points_to_grade(1);
 }
 
-// trie_node* build_three_node_list_helper(int one, int two, int three) {
-//   trie_node* top(new node);
-//   top->data = one;
-//   top->next = new node;
-//   top->next->data = two;
-//   top->next->next = new node;
-//   top->next->next->data = three;
-//   top->next->next->next = (NULL);
-//   return top;
-// }
+// test a initializing a new node
 
+// helper for helper to save a few lines
 trie_node* help_init_node(trie_node* node){
   node->is_root = false;
   node->is_word_end = false;
@@ -107,6 +100,7 @@ trie_node* help_init_node(trie_node* node){
   return node;
 }
 
+// helper function to manually build a trie
 trie_node* build_small_trie(){
   // make a root
   trie_node* ret(new trie_node);
@@ -165,6 +159,7 @@ trie_node* build_small_trie(){
   return ret;
 }
 
+// test insert
 TEST_F(test_Tries,insert){
   trie_node* small_trie_root = build_small_trie();
   set<char> alphabet = createAlphabetSet();
@@ -239,7 +234,6 @@ TEST_F(test_Tries,insert){
 // test remove
 
 // test word count
-
 TEST_F(test_Tries, word_count){
   set<char> alphabet = createAlphabetSet();
   Tries my_trie(alphabet);
@@ -257,6 +251,7 @@ TEST_F(test_Tries, word_count){
 
 }
 
+// test autocomplete
 TEST_F(test_Tries,autocomplete){
   set<char> alphabet = createAlphabetSet();
   Tries my_trie(alphabet);
@@ -278,3 +273,11 @@ TEST_F(test_Tries,autocomplete){
   b = {"max"};
   ASSERT_EQ(a,b);
 }
+
+// test get characters count
+
+// test size
+
+// test report
+
+// test contains

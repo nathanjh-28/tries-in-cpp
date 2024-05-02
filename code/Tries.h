@@ -19,7 +19,14 @@ struct trie_node {
   string characters;
 };
 
-// maybe invariants go here
+// Invariants
+//	Each node in the trie has at most 26 children corresponding to the letters of the alphabet.
+//	Every path from root node to word ending node represents a unique word in the trie, ensuring unique representation and retrievability.
+//	The height of the trie is equal to the longest word inserted.
+//	The root node has no parent and no associated character.
+//	Each node maintains a numerical count indicating how many words end at that node.
+//	Words that share prefixes share nodes and separate at the end of their common prefix.
+//	The trie maintains a hierarchical tree structure with parent-child relationships and no cycles.
 class Tries {
 public:
   // Constructor for Tries 

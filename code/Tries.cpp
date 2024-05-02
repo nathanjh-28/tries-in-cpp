@@ -33,9 +33,6 @@ trie_node* Tries::init_node(string characters) {
   ret->is_word_end = false;
   ret->word_count = 0;
   ret->characters = characters;
-
-  // TODO check that the characters are valid
-
   return ret;
 }
 
@@ -44,16 +41,26 @@ void Tries::insert(string word) {
   // To do
   auto cursor = root;
   string c = "";
+
+  // iterate through all of the characters in the word
+  // and nodes in the trie (with cursor)
+  // adding keys to maps if needed
   for(int i = 0; i < word.size(); i++){
     c = word[i];
+
+    // test if c is valid by checking if it is in the set
+    
+    // if the key does not exist in the map, add it
     if(cursor->map.find(c) == cursor->map.end()){
       trie_node* new_node = init_node(c);
       cursor->map.insert(make_pair(c,new_node));
       num_characters++;
       num_nodes++;
     }
+    
     cursor = cursor->map.at(c);
   }
+  // we reached the word ending node, update properties
   cursor->is_word_end = true;
   cursor->word_count++;
   num_words++;
@@ -62,27 +69,38 @@ void Tries::insert(string word) {
 
 void Tries::remove(string word) {
   // To do
+  // create a stack vector to keep track of all the nodes traversed
+  // so that we can backtrack and delete
   vector <trie_node*> node_list;
+  
   trie_node* cursor = root;
   string c;
+  
+  // iterate through the word's characters and the trie's nodes
   for(int i = 0; i < word.size(); i++){
     c = word[i];
     node_list.push_back(cursor);
+    
+    // check if word is in the trie
     if(cursor->map.find(c) == cursor->map.end()){
       // doesn't exist in trie;
       return;
     }
     cursor = cursor->map.at(c);
   }
+  // if word ending node is more than one, we only need to decrement
   if(cursor->word_count > 1){
     cursor->word_count--;
     num_words--;
     return;
   }
+  // if word ending node has only one word count, we delete the whole node
   node_list[node_list.size()-1]->map.erase(cursor->characters);
   delete cursor;
-  num_nodes--;
+  num_nodes--; 
   num_characters = num_characters - c.size();
+  
+  // loop through the stack we created and remove nodes that are not shared
   for(int i = node_list.size()-1; i > 0; i--){
     if(node_list[i]->map.size() == 0 && !node_list[i]->is_word_end){
     node_list[i-1]->map.erase(node_list[i]->characters);
@@ -99,8 +117,10 @@ void Tries::remove(string word) {
 int Tries::word_count(string word){
   trie_node* cursor = root;
   string c;
+  // iterate through the word's characters and the trie's nodes
   for(int i = 0; i < word.size(); i++){
     c = word[i];
+    // if it's not there, return a count of 0
     if(cursor->map.find(c) == cursor->map.end()){
       return 0;
     }
@@ -109,6 +129,8 @@ int Tries::word_count(string word){
   return cursor->word_count;
 }
 
+// helper function for autocomplete that recursively maintains
+// prefixes and a vector of words
 void autocomplete_recurse(trie_node* subtree, string prefix,vector<string>& word_list){
   if(subtree->is_word_end){
     word_list.push_back(prefix);
@@ -122,6 +144,8 @@ vector<string> Tries::autocomplete(string prefix){
   vector<string> word_list;
   trie_node* cursor = root;
   string c;
+  // iterate through the trie and the prefix to find where the 
+  // subtree for the prefix starts
   for(int i = 0; i < prefix.size(); i++){
     c = prefix[i];
     if(cursor->map.find(c) == cursor->map.end()){
@@ -129,6 +153,7 @@ vector<string> Tries::autocomplete(string prefix){
     }
     cursor = cursor->map.at(c);
   }
+  // call helper function on the subtree where the prefix ended
   autocomplete_recurse(cursor,prefix,word_list);
   return word_list;
 }
@@ -142,8 +167,10 @@ int Tries::nodes(){
 }
 
 void Tries::clear(){
+  // make a vector of the words in the trie
   vector <string> word_list = autocomplete("");
 
+  // iterate through and delete one by one
   for(int i = 0; i < word_list.size(); i++){
     remove(word_list[i]);
   }
@@ -159,14 +186,20 @@ int Tries::size() {
 
 string Tries::report() {
   // To do
+  // creating a list by just calling 
+  // autocomplete on a prefix of an empty string
   vector<string> list = autocomplete("");
 
+  // edge case if it's just one
   if(list.size() == 1){
     return "'" + list[0] + "'";
   }
 
+  // experimented with formatting and this is what I landed on...
+
   string ret = "'" + list[0] + ",";
 
+  // concatenate with the output string every word in the list
   for(int i = 1; i < list.size()-1; i++){
     ret = ret + " " + list[i] + ",";
   }
@@ -176,6 +209,8 @@ string Tries::report() {
 }
 bool Tries::contains(string word) {
   // To do
+
+  // we call word count and if it's more than 0, it's in the trie
   int count = word_count(word);
   if(count < 1){
     return false;
