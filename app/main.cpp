@@ -39,12 +39,18 @@ int main(){
         cout << "don't have steve" << endl;
     }
 
+    cout << "number of words: " << my_trie.num_words << endl;
     my_trie.remove("mitch");
     if(my_trie.contains("mitch") == false){
         cout << "mitch gone" << endl;
     }
+    cout << "number of words: " << my_trie.num_words << endl;
 
     cout << my_trie.report() << endl;
+
+    my_trie.clear();
+
+    cout << "number of words: " << my_trie.num_words << endl;
 
 
     return 0;

@@ -76,17 +76,23 @@ void Tries::remove(string word) {
   }
   if(cursor->word_count > 1){
     cursor->word_count--;
+    num_words--;
     return;
   }
   node_list[node_list.size()-1]->map.erase(cursor->characters);
   delete cursor;
+  num_nodes--;
+  num_characters = num_characters - c.size();
   for(int i = node_list.size()-1; i > 0; i--){
     if(node_list[i]->map.size() == 0 && !node_list[i]->is_word_end){
     node_list[i-1]->map.erase(node_list[i]->characters);
     delete node_list[i];
+    num_nodes--;
+    num_characters = num_characters - c.size();
     }
     
   }
+  num_words--;
   return;
 }
 
@@ -136,6 +142,12 @@ int Tries::nodes(){
 }
 
 void Tries::clear(){
+  vector <string> word_list = autocomplete("");
+
+  for(int i = 0; i < word_list.size(); i++){
+    remove(word_list[i]);
+  }
+
   return;
 }
 
