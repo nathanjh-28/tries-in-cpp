@@ -62,6 +62,32 @@ void Tries::insert(string word) {
 
 void Tries::remove(string word) {
   // To do
+  vector <trie_node*> node_list;
+  trie_node* cursor = root;
+  string c;
+  for(int i = 0; i < word.size(); i++){
+    c = word[i];
+    node_list.push_back(cursor);
+    if(cursor->map.find(c) == cursor->map.end()){
+      // doesn't exist in trie;
+      return;
+    }
+    cursor = cursor->map.at(c);
+  }
+  if(cursor->word_count > 1){
+    cursor->word_count--;
+    return;
+  }
+  node_list[node_list.size()-1]->map.erase(cursor->characters);
+  delete cursor;
+  for(int i = node_list.size()-1; i > 0; i--){
+    if(node_list[i]->map.size() == 0 && !node_list[i]->is_word_end){
+    node_list[i-1]->map.erase(node_list[i]->characters);
+    delete node_list[i];
+    }
+    
+  }
+  return;
 }
 
 int Tries::word_count(string word){
