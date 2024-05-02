@@ -120,10 +120,21 @@ int Tries::size() {
 }
 
 string Tries::report() {
-  string ret;
-  
   // To do
-  return ret;
+  vector<string> list = autocomplete("");
+
+  if(list.size() == 1){
+    return "'" + list[0] + "'";
+  }
+
+  string ret = "'" + list[0] + ",";
+
+  for(int i = 1; i < list.size()-1; i++){
+    ret = ret + " " + list[i] + ",";
+  }
+  ret = ret + " " + list[list.size()-1];
+  
+  return ret + "'";
 }
 bool Tries::contains(string word) {
   bool ret;
