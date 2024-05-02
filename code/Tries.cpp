@@ -137,9 +137,14 @@ string Tries::report() {
   return ret + "'";
 }
 bool Tries::contains(string word) {
-  bool ret;
   // To do
-  return ret;
+  int count = word_count(word);
+  if(count < 1){
+    return false;
+  }
+  else{
+    return true;
+  }
 }
 
 trie_node* Tries::get_root() { return root; }

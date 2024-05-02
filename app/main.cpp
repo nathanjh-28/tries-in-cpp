@@ -32,7 +32,12 @@ int main(){
     report = my_trie.report();
     cout << report << endl;
 
-
+    if(my_trie.contains("mitch") == true){
+        cout << "got mitch" << endl;
+    }
+    if(my_trie.contains("steve") == false){
+        cout << "don't have steve" << endl;
+    }
 
 
     return 0;
