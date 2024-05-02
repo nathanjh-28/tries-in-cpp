@@ -54,7 +54,8 @@ int main(){
     // cli interface for the methods?
 
     // how can I visualize trie in list form...
-
+    my_trie.insert("steve");
+    my_trie.insert("frank");
     cout << my_trie.print_node(my_trie.get_root());
 
     return 0;

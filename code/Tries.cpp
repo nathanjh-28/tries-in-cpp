@@ -187,7 +187,9 @@ bool Tries::contains(string word) {
 
 string Tries::print_node(trie_node* node){
   
-  string print_string = "";
+  string print_string = "==========\n";
+  print_string += "PRINT NODE:\n";
+  print_string += "==========\n";
 
   if(node->is_root == true){
     print_string += "This node is the root.\n";
@@ -210,10 +212,7 @@ string Tries::print_node(trie_node* node){
     print_string += i->first + "\n";
   }
 
-  
-
-  
-  return print_string;
+  return print_string + "\n==========\n";
 }
 
 // compress trie
