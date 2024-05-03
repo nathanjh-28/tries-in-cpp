@@ -1,4 +1,4 @@
-# Standard Tries in C++
+# Standard and Compressed Tries in C++
 ***by Nathan Harris*** <br>
 ***A Final Project for CSPB 2270 Data Structures Spring 2024*** <br>
 
@@ -11,7 +11,7 @@ The usage for this project should look familiar since I used the linked list hom
 `cd build` <br>
 `cmake ..` <br>
 `make` <br>
-`./run_app`  - For running a contrived set of print statements. <br>
+`./run_app`  - For running a contrived set of printed demonstrations. <br>
 `./run_tests` - To see tests executed and passed. <br>
 
 ## Invariants
@@ -24,10 +24,10 @@ The usage for this project should look familiar since I used the linked list hom
 -	The trie maintains a hierarchical tree structure with parent-child relationships and no cycles.
 
 ## Complexity
-The trie data structure is a very efficient and fast for inserting and looking up words in a corpus.  The limitations are related to the levels of the tree based on what has been inserted.  For insert the average and worst case complexity is $O(m)$ where $m$ is the length of the string that is being inserted.  Traversal would reflect the number of letters in the word.  Similarly, remove would have a worst case complexity of $O(m)$ since traversal is required.  In the worst case, no strings share prefixes.  In that case every level of the tree corresponds to a character in every word that has been inserted.  Printing a report of the trie would require iterating through all of the characters that were inserted in to the string.  If there were 26 words inserted and if each word did not share prefixes, it would be $O(26^{(26^{(26^{(26^{...})})}})$.  This is a highly unlikely scenario since there are numerous prefixes in the English language.  For spatial complexity, since each node reflects one character, and often prefixes are more than one character, the spatial complexity can be improved by compressing the trie nodes such that prefixes take up only one node.  Additional methods would be required for compressing and decompressing when inserting and removing words.
+The trie data structure is a very efficient and fast for inserting and looking up words in a corpus.  The limitations are related to the levels of the tree based on what has been inserted.  For insert the average and worst case complexity is $O(m)$ where $m$ is the length of the string that is being inserted.  Traversal would reflect the number of letters in the word.  Similarly, remove would have a worst case complexity of $O(m)$ since traversal is required.  In the worst case, no strings share prefixes.  In that case every level of the tree corresponds to a character in every word that has been inserted.  Printing a report of the trie would require iterating through all of the characters that were inserted in to the string.  If there were 26 words inserted and if each word did not share prefixes, it would be $O(26^{(26^{(26^{(26^{...})})}})$.  This is a highly unlikely scenario since there are numerous prefixes in the English language.  For spatial complexity, since each node reflects one character, and often prefixes are more than one character, the spatial complexity can be improved by compressing the trie nodes such that prefixes take up only one node.  Additional methods were experimented with in this project.
 
 
-## Implementation Breakdown
+## WALKTHROUGH
 
 ### Trie Node Properties:
 - is_root
@@ -79,6 +79,17 @@ The trie data structure is a very efficient and fast for inserting and looking u
     - The root is a private member, so access is through this method.
 - set root
     - Changing the root is through this method.
+- compress node
+    - takes a node with only one child and compresses the node and it's child
+- decompress node 
+    - takes a node with more than one character and separates it out over nodes
+- compress trie
+    - recursively calls compress node on nodes that are eligible for compression
+- decompress trie
+    - recursively calls decompress node on nodes that are eligible for compression
+- update maps keys
+    - function for correcting the keys on maps that point to nodes that have been compressed or decompressed.
+
 
 ### Underlying Data Structures
 - Hash map for storing pointers to nodes
@@ -92,7 +103,7 @@ The trie data structure is a very efficient and fast for inserting and looking u
 - Help Init Node, to save lines on initializing nodes in tests
 
 ## Motivation
-For this project I simply enjoyed a similar and smaller programming assignment in CSPB 3104 and wished to expand on it. In the process I would practice using C++ as well as writing tests.  I figured by modeling our weekly homework assignments in a way I could be contributing to the library of homework assignments for 2270.
+For this project I simply enjoyed a similar and smaller programming assignment in CSPB 3104 and wished to expand on it. In the process I would practice using C++ as well as writing tests.  I figured by modeling our weekly homework assignments in a way I could be contributing to the library of homework assignments for 2270.  I also could not decide between standard tries and compressed tries.  I decided to do standard tries and if I had time, experiment with compressed tries.
 
 ## Reflection
 This has been a really challenging project mainly due to the open ended nature of the requirements.  Transitioning from weekly homework assignments with strict rules, tests, and requirements was jarring but hammered in a great learning experience.  I tried to mitigate this by sticking to the structure of the weekly assignments but still, planning the project, deciding how to go about writing tests, which methods to include, how a user would interact with the data structure really revealed to me how much time and effort can go in to just a basic project.  
@@ -102,11 +113,13 @@ Before this project, I did not have as much experience writing tests and dreaded
 For writing C++, I learned a lot of interesting techniques, for example using the unordered_map library and iterating through a map.  Using sets for the first time in C++.  I continued to polish the basic C++ skills that we acquired in this course while in the process of exploring a data structure.
 
 ## Stretch Goals or What's Next
-In my proposal I discussed implementing Compression tries or Radix trees if I were to have extra time and considered comparing using them.  I implemented the properties of the tries in a way that I could transition them in to compression tries if I wanted to.  In the end, I ran out of time to implement this and left my notes as comments in the code.  If I were to continue to work on this project that is one place where I would focus my efforts.  Building up a Trie structure that contains the standard implementation, compressed, and coming up with ways to compare usage.  
+At the very end of this project I implemented methods to compress and decompress a trie so that I could compare before and after.  Since this was done quickly at the end, I would like to spend more time fleshing out the tests for these methods, as well as a more rigorous comparison between the two data structures.  
 
-I feel that I have barely scratched the surface for writing tests.  Working on this project would involve hunting down edge cases and writing better tests.  I feel that these tests are good for a first draft but really working on them so that it will handle more edge cases could be a great way to continue to strengthen my test writing skills.
+I feel that I have barely scratched the surface for writing tests.  Continued work on this project would involve hunting down edge cases and writing better tests.  I feel that these tests are good for a first draft but really working on them so that it will handle more edge cases could be a great way to continue to strengthen my test writing skills.
 
-One thing I keep going back and forth on is whether to add a property to the trie node called parent, that holds a pointer to the parent node.  I decided for remove to instead use a stack as a vector, and remove the nodes backtracking until we reached a node that is used by another word.  Another way to do it would be to backtrack using the parent but I felt that using a stack would be more interesting.  I feel that if I were to implement the compress trie method, I would want to use a parent attribute to easily merge parents and children that only have one key in the their map.  I also had some last minute thoughts on visualizing the trie to help show it in the terminal and I considered having a rank as an attribute on the node so that if you are printing the trie, you could insert the node's data in to a 2D vector where each vector is a level in the trie, and would reflect the ranking of the nodes in the trie.  For example, the nodes that are ranked 2 steps away from the root would be in the 2nd vector of the 2D vectors.  
+One thing I keep going back and forth on is whether to add a property to the trie node called parent, that holds a pointer to the parent node.  I decided for remove to instead use a stack as a vector, and remove the nodes backtracking until we reached a node that is used by another word.  Another way to do it would be to backtrack using the parent but I felt that using a stack would be more interesting.  For updating the keys that point to a compressed node, instead of updating a parent's map, which would be easier if there was a parent pointer on a node, I created a helper function that takes a subtrie and corrects maps where their keys and the node's characters don't match.  I felt that this was an interesting way to go about doing it.
+
+I also had some last minute thoughts on visualizing the trie to help show it in the terminal and I considered having a rank as an attribute on the node so that if you are printing the trie, you could insert the node's data in to a 2D vector where each vector is a level in the trie, and would reflect the ranking of the nodes in the trie.  For example, the nodes that are ranked 2 steps away from the root would be in the 2nd vector of the 2D vectors.  
 
 ## Conclusion
 This has been a great project to research, explore and implement a data structure in C++ as well as practice writing tests and using the cmake makefile.  I am grateful for this opportunity and look forward to encountering Tries in the real world!
