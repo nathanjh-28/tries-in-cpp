@@ -11,6 +11,8 @@
 #include "Tries.h"
 
 
+
+
 Tries::Tries(set<char> alpha) {
   // Your code here
   root = init_node("");
@@ -46,9 +48,14 @@ void Tries::insert(string word) {
   // and nodes in the trie (with cursor)
   // adding keys to maps if needed
   for(int i = 0; i < word.size(); i++){
-    c = word[i];
+
+    c = tolower(word[i]);
 
     // test if c is valid by checking if it is in the set
+    if(alphabet.find(tolower(word[i])) == alphabet.end()){
+      return;
+    }
+
     
     // if the key does not exist in the map, add it
     if(cursor->map.find(c) == cursor->map.end()){
