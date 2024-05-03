@@ -1,3 +1,18 @@
+//
+//  _______________________________________________
+//
+//  STANDARD AND COMPRESSED TRIES IN C++
+//  By Nathan J Harris
+//  Spring 2024 CSPB 2270 - CU Boulder
+//  cu id: naha3153
+//  github: nathanjh-28
+//  https://github.com/nathanjh-28/tries-in-cpp
+//
+//  _______________________________________________
+//
+
+
+
 // If you change anything in this file, your changes will be ignored
 // in your homework submission.
 // Chekout TEST_F functions bellow to learn what is being tested.
@@ -274,6 +289,8 @@ TEST_F(test_Tries,autocomplete){
   ASSERT_EQ(a,b);
 }
 
+// _______ TODO: ________
+
 // test get characters count
 
 // test size
@@ -281,3 +298,14 @@ TEST_F(test_Tries,autocomplete){
 // test report
 
 // test contains
+
+// test compress node
+
+// test decompress node
+
+// test compress trie
+
+// test decompress trie
+
+// test update maps keys
+

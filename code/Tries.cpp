@@ -1,16 +1,21 @@
-//  <TODO Filename>
-//      <TODO: Describe the data structure here >
 //
-//  Author: <TODO: place your name here>
-//  CU ID: <TODO: place your CU ID here (4 letters - 4 digits)>
-//  GitHub Username: <TODO: place your GitHub user name here>
-//  Hours to complete lab: <TODO: place the number of hours needed to complete
-//  lab, do not count time reading or watching videos>
+//  _______________________________________________
 //
+//  STANDARD AND COMPRESSED TRIES IN C++
+//  By Nathan J Harris
+//  Spring 2024 CSPB 2270 - CU Boulder
+//  cu id: naha3153
+//  github: nathanjh-28
+//  https://github.com/nathanjh-28/tries-in-cpp
+//
+//  _______________________________________________
+//
+
+
+
+
 
 #include "Tries.h"
-
-
 
 
 Tries::Tries(set<char> alpha) {
@@ -329,6 +334,7 @@ trie_node* Tries::decompress_node(trie_node* original_node){
 
 void Tries::compress_trie(trie_node* subtrie){
 
+  // check if the node is elgible for compression
   if(subtrie->map.size() == 1 && 
   subtrie->is_word_end == false && 
   subtrie->map.begin()->second->is_word_end == false &&
@@ -336,10 +342,12 @@ void Tries::compress_trie(trie_node* subtrie){
   ){
     compress_node(subtrie);
   }
+  // recursive call this function on the children
   for(auto i = subtrie->map.begin(); i != subtrie->map.end(); i++ ){
     compress_trie(i->second);
   }
 
+  // if this is the root we can run this function to clean up maps
   if(subtrie->is_root){
     update_maps_keys(subtrie);
   }
@@ -348,11 +356,17 @@ void Tries::compress_trie(trie_node* subtrie){
 }
 
 void Tries::decompress_trie(trie_node* subtrie){
+  // check if this node is eligible to be decompressed
   if(subtrie->characters.size() > 1){
     decompress_node(subtrie);
   }
+  // recursive call this function on the children
   for(auto i = subtrie->map.begin(); i != subtrie->map.end(); i++ ){
     decompress_trie(i->second);
+  }
+  // if this is the root we can run this function to clean up maps
+  if(subtrie->is_root){
+    update_maps_keys(subtrie);
   }
   return;
 
@@ -360,15 +374,20 @@ void Tries::decompress_trie(trie_node* subtrie){
 
 void Tries::update_maps_keys(trie_node* subtrie){
   vector <string> remove_list;
+
+  // iterate through map and find where the key doesn't match the chars
   for(auto pair = subtrie->map.begin(); pair != subtrie->map.end(); pair++){
     if(pair->first != pair->second->characters){
+      // insert them with the correct key
       subtrie->map.insert(make_pair(pair->second->characters,pair->second));
       remove_list.push_back(pair->first);
     }
   }
+  // iterate through remove list to erase bad keys
   for(int i = 0; i < remove_list.size(); i++){
     subtrie->map.erase(remove_list[i]);
   }
+  // for each node recursively call this function 
   for(auto pair = subtrie->map.begin(); pair != subtrie->map.end(); pair++){
     update_maps_keys(pair->second);
   }

@@ -1,3 +1,17 @@
+//
+//  _______________________________________________
+//
+//  STANDARD AND COMPRESSED TRIES IN C++
+//  By Nathan J Harris
+//  Spring 2024 CSPB 2270 - CU Boulder
+//  cu id: naha3153
+//  github: nathanjh-28
+//  https://github.com/nathanjh-28/tries-in-cpp
+//
+//  _______________________________________________
+//
+
+
 #include <iostream>
 #include "../code/Tries.h"
 
