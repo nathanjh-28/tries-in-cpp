@@ -247,6 +247,23 @@ TEST_F(test_Tries,insert){
 }
 
 // test remove
+TEST_F(test_Tries,remove){
+  set <char> alphabet = createAlphabetSet();
+  Tries my_trie(alphabet);
+
+  vector <string> word_list = {"mitch","mike","max","steve","frank"};
+  for(int i = 0; i < word_list.size(); i++){
+    my_trie.insert(word_list[i]);
+  }
+
+  ASSERT_EQ(my_trie.size(),5);
+  ASSERT_EQ(my_trie.contains("steve"),true);
+
+  my_trie.remove("steve");
+
+  ASSERT_EQ(my_trie.size(),4);
+  ASSERT_EQ(my_trie.contains("steve"),false);
+}
 
 // test word count
 TEST_F(test_Tries, word_count){
@@ -289,15 +306,61 @@ TEST_F(test_Tries,autocomplete){
   ASSERT_EQ(a,b);
 }
 
-// _______ TODO: ________
 
 // test get characters count
+TEST_F(test_Tries,character_count){
+  set <char> alphabet = createAlphabetSet();
+  Tries my_trie(alphabet);
+
+  vector <string> word_list = {"mitch","mike","max","steve","frank"};
+  for(int i = 0; i < word_list.size(); i++){
+    my_trie.insert(word_list[i]);
+  }
+
+  ASSERT_EQ(my_trie.characters(),19);
+}
 
 // test size
+TEST_F(test_Tries,word_size){
+  set <char> alphabet = createAlphabetSet();
+  Tries my_trie(alphabet);
 
+  vector <string> word_list = {"mitch","mike","max","steve","frank"};
+  for(int i = 0; i < word_list.size(); i++){
+    my_trie.insert(word_list[i]);
+  }
+
+  ASSERT_EQ(my_trie.size(),5);
+}
 // test report
+TEST_F(test_Tries,report){
+  set <char> alphabet = createAlphabetSet();
+  Tries my_trie(alphabet);
+
+  vector <string> word_list = {"mitch","mike","max","steve","frank"};
+  for(int i = 0; i < word_list.size(); i++){
+    my_trie.insert(word_list[i]);
+  }
+
+  ASSERT_EQ(my_trie.report(),"'frank, steve, max, mike, mitch'");
+}
 
 // test contains
+TEST_F(test_Tries,contains){
+  set <char> alphabet = createAlphabetSet();
+  Tries my_trie(alphabet);
+
+  vector <string> word_list = {"mitch","mike","max","steve","frank"};
+  for(int i = 0; i < word_list.size(); i++){
+    my_trie.insert(word_list[i]);
+  }
+
+  ASSERT_EQ(my_trie.contains("steve"),true);
+  ASSERT_EQ(my_trie.contains("michael"),false);
+
+}
+
+// _______ TODO: ________
 
 // test compress node
 
