@@ -250,16 +250,96 @@ string Tries::print_node(trie_node* node){
   return print_string + "\n==========\n";
 }
 
-// compress trie
-// if a node's parent only has one child, merge the child's 
-// characters with the parent's characters, 
-// replace the parent's map with the child's map
-// decrement number of nodes
-// if child was a word ending node, make the parent a word ending node
+trie_node* Tries::compress_node(trie_node* parent){
+  // if the node can't be compressed just return it
+  if(parent->map.size() != 1){
+    return parent;
+  }
+  trie_node* child = parent->map.begin()->second;
 
-// decompress node
-// seperate out and copy the map to the last character
+  // compressing word ending nodes will be a nightmare to 
+  // decompress later
+  if(child->is_word_end == true || parent->is_word_end == true){
+    return parent;
+  }
 
+  string child_characters = parent->map.begin()->first;
+
+  // concatenate parents characters with child's characters
+  parent->characters += child_characters;
+
+  // replace the parent's map with the child's map
+  parent->map = child->map;
+
+  // update the number nodes in the trie
+  num_nodes--;
+
+  // return the newly compressed node
+  return parent;
+}
+
+trie_node* Tries::decompress_node(trie_node* original_node){
+  // we don't decompress these kinds of nodes
+  if(original_node->is_word_end == true || original_node->characters.size() == 1){
+    return original_node;
+  }
+  // variables for this process
+  string c;
+  vector <trie_node*> node_list;
+  trie_node* new_node;
+  auto original_map = original_node->map;
+  
+  // delete the map from the original node
+  original_node->map.clear();
+
+  // push the original into the list for easy linking later
+  node_list.push_back(original_node);
+  
+  // make new nodes and put them in a list
+  for(int i = 1; i < original_node->characters.size(); i++){
+    c = original_node->characters[i];
+    new_node = init_node(c);
+    num_nodes++;
+    node_list.push_back(new_node);
+  }
+
+  // update the new node's characters to just be the first character
+  original_node->characters = original_node->characters[0];
+
+  // iterate through our list of nodes and link them together
+  for(int i = 1; i < node_list.size()-1; i++ ){
+  node_list[i]->map.insert(make_pair(node_list[i+1]->characters,node_list[i+1]));
+  }
+
+  // the original map is attached to the last node in the decompressed list
+  node_list[node_list.size()-1]->map = original_map;
+
+  return original_node;
+
+}
+
+void Tries::compress_tree(trie_node* subtree){
+
+  if(subtree->map.size() == 1 && subtree->is_word_end == false && subtree->map.begin()->second->is_word_end == false ){
+    compress_node(subtree);
+  }
+  for(auto i = subtree->map.begin(); i != subtree->map.end(); i++ ){
+    compress_tree(i->second);
+  }
+  return;
+
+}
+
+void Tries::decompress_tree(trie_node* subtree){
+  if(subtree->characters.size() > 1){
+    decompress_node(subtree);
+  }
+  for(auto i = subtree->map.begin(); i != subtree->map.end(); i++ ){
+    decompress_tree(i->second);
+  }
+  return;
+
+}
 
 trie_node* Tries::get_root() { return root; }
 

@@ -82,6 +82,18 @@ public:
   // This is is a helper function for manually building tries in tests
   void set_root(trie_node* root);
 
+  // if a node can be compressed, it's characters and maps are merged
+  trie_node* compress_node(trie_node* parent);
+
+  // if a node can be decompressed, it's characters and maps are separated
+  trie_node* decompress_node(trie_node* node);
+
+  //recursively call compress_node on all nodes that are eligible
+  void compress_tree(trie_node* subtree);
+
+  //recursively call decompress_node on all nodes that are eligible
+  void decompress_tree(trie_node* subtree);
+
   // additional public variables
   int num_words;
   int num_nodes;
