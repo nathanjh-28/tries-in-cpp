@@ -2,6 +2,8 @@
 ***by Nathan Harris*** <br>
 ***A Final Project for CSPB 2270 Data Structures Spring 2024*** <br>
 
+![tries_pic](./tries_pic.png)
+
 ### What is the *Tries* data structure?
 A trie is a treelike data structure where paths from root to leaf represent words inserted and prefix characters shared with words share nodes.  Tries are useful when matching prefixes or implementing autocomplete in a smart text editor.
 
@@ -11,7 +13,7 @@ The usage for this project should look familiar since I used the linked list hom
 `cd build` <br>
 `cmake ..` <br>
 `make` <br>
-`./run_app`  - For running a contrived set of printed demonstrations. <br>
+`./run_app`  - For running a contrived set of printed demonstrations. I used the Cask of Amontillado short story to demonstrate compressed tries.<br>
 `./run_tests` - To see tests executed and passed. <br>
 
 ## Invariants
@@ -28,6 +30,21 @@ The trie data structure is a very efficient and fast for inserting and looking u
 
 
 ## WALKTHROUGH
+
+### Relevant Files:
+
+- app > main.cpp
+    - demos for ./run_app
+- code > Tries.cpp
+    - The heart of the project where the data structure is implemented.
+- code > Tries.h
+    - Header file with descriptive comments for methods.
+- tests > test_hw.cpp
+    - all of the tests for ./run_tests
+- Project_Proposal.pdf
+    - The project proposal I turned in for posterity.
+- Tries-planning.pdf
+    - This is the document I used to plan out my project before writing any code.
 
 ### Trie Node Properties:
 - is_root
@@ -80,15 +97,15 @@ The trie data structure is a very efficient and fast for inserting and looking u
 - set root
     - Changing the root is through this method.
 - compress node
-    - takes a node with only one child and compresses the node and it's child
+    - Takes a node with only one child and compresses the node and it's child
 - decompress node 
-    - takes a node with more than one character and separates it out over nodes
+    - Takes a node with more than one character and separates it out over nodes
 - compress trie
-    - recursively calls compress node on nodes that are eligible for compression
+    - Recursively calls compress node on nodes that are eligible for compression
 - decompress trie
-    - recursively calls decompress node on nodes that are eligible for compression
+    - Recursively calls decompress node on nodes that are eligible for compression
 - update maps keys
-    - function for correcting the keys on maps that point to nodes that have been compressed or decompressed.
+    - Function for correcting the keys on maps that point to nodes that have been compressed or decompressed.
 
 
 ### Underlying Data Structures

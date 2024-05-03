@@ -109,6 +109,7 @@ public:
   //recursively call decompress_node on all nodes that are eligible
   void decompress_trie(trie_node* subtrie);
 
+  // Function for correcting the keys on maps that point to nodes that have been compressed or decompressed.
   void update_maps_keys(trie_node* subtrie);
 
   // additional public variables

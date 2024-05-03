@@ -41,181 +41,191 @@ void create_trie_from_paragraph(string text, Tries &my_trie){
   return;
 }
 
-string text = R"(Stay for me there! I will not fail.
+string text = R"(The Cask of Amontillado
+Edgar Allan Poe
+Published 1846 in Godey’s Lady’s Book, Vol. 33, Iss. 5
+Gothic
+Horror
+2,323 words
+This story has a recommendation!
+Read recommendation of The Cask of Amontillado
+The thousand injuries of Fortunato I had borne as I best could, but when he ventured upon insult I vowed revenge. You, who so well know the nature of my soul, will not suppose, however, that I gave utterance to a threat. At length I would be avenged; this was a point definitely, settled—but the very definitiveness with which it was resolved precluded the idea of risk. I must not only punish but punish with impunity. A wrong is unredressed when retribution overtakes its redresser. It is equally unredressed when the avenger fails to make himself felt as such to him who has done the wrong.
 
-To meet thee in that hollow vale.
+It must be understood that neither by word nor deed had I given Fortunato cause to doubt my good will. I continued, as was my wont to smile in his face, and he did not perceive that my smile now was at the thought of his immolation.
 
- 
+He had a weak point—this Fortunato—although in other regards he was a man to be respected and even feared. He prided himself on his connoisseur-ship in wine. Few Italians have the true virtuoso spirit. For the most part their enthusiasm is adopted to suit the time and opportunity, to practise imposture upon the British and Austrian millionaires. In painting and gemmary, Fortunato, like his countrymen, was a quack, but in the matter of old wines he was sincere. In this respect I did not differ from him materially;—I was skilful in the Italian vintages myself, and bought largely whenever I could.
 
-(Exequy on the death of his wife, by Henry King, Bishop of Chichester.)
+It was about dusk, one evening during the supreme madness of the carnival season, that I encountered my friend. He accosted me with excessive warmth, for he had been drinking much. The man wore motley. He had on a tight-fitting parti-striped dress, and his head was surmounted by the conical cap and bells. I was so pleased to see him that I thought I should never have done wringing his hand.
 
- 
+I said to him—“My dear Fortunato, you are luckily met. How remarkably well you are looking to-day. But I have received a pipe of what passes for Amontillado, and I have my doubts.”
 
-Ill-fated and mysterious man!—bewildered in the brilliancy of thine own imagination, and fallen in the flames of thine own youth! Again in fancy I behold thee! Once more thy form hath risen before me!—not—oh! not as thou art—in the cold valley and shadow—but as thou shouldst be—squandering away a life of magnificent meditation in that city of dim visions, thine own Venice—which is a star-beloved Elysium of the sea, and the wide windows of whose Palladian palaces look down with a deep and bitter meaning upon the secrets of her silent waters. Yes! I repeat it—as thou shouldst be. There are surely other worlds than this—other thoughts than the thoughts of the multitude—other speculations than the speculations of the sophist. Who then shall call thy conduct into question? who blame thee for thy visionary hours, or denounce those occupations as a wasting away of life, which were but the overflowings of thine everlasting energies?
+“How?” said he. “Amontillado, A pipe? Impossible! And in the middle of the carnival!”
 
-It was at Venice, beneath the covered archway there called the Ponte di Sospiri, that I met for the third or fourth time the person of whom I speak. It is with a confused recollection that I bring to mind the circumstances of that meeting. Yet I remember—ah! how should I forget?—the deep midnight, the Bridge of Sighs, the beauty of woman, and the Genius of Romance that stalked up and down the narrow canal.
+“I have my doubts,” I replied; “and I was silly enough to pay the full Amontillado price without consulting you in the matter. You were not to be found, and I was fearful of losing a bargain.”
 
-It was a night of unusual gloom. The great clock of the Piazza had sounded the fifth hour of the Italian evening. The square of the Campanile lay silent and deserted, and the lights in the old Ducal Palace were dying fast away. I was returning home from the Piazetta, by way of the Grand Canal. But as my gondola arrived opposite the mouth of the canal San Marco, a female voice from its recesses broke suddenly upon the night, in one wild, hysterical, and long continued shriek. Startled at the sound, I sprang upon my feet: while the gondolier, letting slip his single oar, lost it in the pitchy darkness beyond a chance of recovery, and we were consequently left to the guidance of the current which here sets from the greater into the smaller channel. Like some huge and sable-feathered condor, we were slowly drifting down towards the Bridge of Sighs, when a thousand flambeaux flashing from the windows, and down the staircases of the Ducal Palace, turned all at once that deep gloom into a livid and preternatural day.
+“Amontillado!”
 
-A child, slipping from the arms of its own mother, had fallen from an upper window of the lofty structure into the deep and dim canal. The quiet waters had closed placidly over their victim; and, although my own gondola was the only one in sight, many a stout swimmer, already in the stream, was seeking in vain upon the surface, the treasure which was to be found, alas! only within the abyss. Upon the broad black marble flagstones at the entrance of the palace, and a few steps above the water, stood a figure which none who then saw can have ever since forgotten. It was the Marchesa Aphrodite—the adoration of all Venice—the gayest of the gay—the most lovely where all were beautiful—but still the young wife of the old and intriguing Mentoni, and the mother of that fair child, her first and only one, who now, deep beneath the murky water, was thinking in bitterness of heart upon her sweet caresses, and exhausting its little life in struggles to call upon her name.
+“I have my doubts.”
 
-She stood alone. Her small, bare, and silvery feet gleamed in the black mirror of marble beneath her. Her hair, not as yet more than half loosened for the night from its ball-room array, clustered, amid a shower of diamonds, round and round her classical head, in curls like those of the young hyacinth. A snowy-white and gauze-like drapery seemed to be nearly the sole covering to her delicate form; but the mid-summer and midnight air was hot, sullen, and still, and no motion in the statue-like form itself, stirred even the folds of that raiment of very vapor which hung around it as the heavy marble hangs around the Niobe. Yet—strange to say!—her large lustrous eyes were not turned downwards upon that grave wherein her brightest hope lay buried—but riveted in a widely different direction! The prison of the Old Republic is, I think, the stateliest building in all Venice—but how could that lady gaze so fixedly upon it, when beneath her lay stifling her only child? Yon dark, gloomy niche, too, yawns right opposite her chamber window—what, then, could there be in its shadows—in its architecture—in its ivy-wreathed and solemn cornices—that the Marchesa di Mentoni had not wondered at a thousand times before? Nonsense!—Who does not remember that, at such a time as this, the eye, like a shattered mirror, multiplies the images of its sorrow, and sees in innumerable far-off places, the woe which is close at hand?
+“Amontillado!”
 
-Many steps above the Marchesa, and within the arch of the water-gate, stood, in full dress, the Satyr-like figure of Mentoni himself. He was occasionally occupied in thrumming a guitar, and seemed ennuye to the very death, as at intervals he gave directions for the recovery of his child. Stupefied and aghast, I had myself no power to move from the upright position I had assumed upon first hearing the shriek, and must have presented to the eyes of the agitated group a spectral and ominous appearance, as with pale countenance and rigid limbs, I floated down among them in that funereal gondola.
+“And I must satisfy them.”
 
-All efforts proved in vain. Many of the most energetic in the search were relaxing their exertions, and yielding to a gloomy sorrow. There seemed but little hope for the child; (how much less than for the mother!) but now, from the interior of that dark niche which has been already mentioned as forming a part of the Old Republican prison, and as fronting the lattice of the Marchesa, a figure muffled in a cloak, stepped out within reach of the light, and, pausing a moment upon the verge of the giddy descent, plunged headlong into the canal. As, in an instant afterwards, he stood with the still living and breathing child within his grasp, upon the marble flagstones by the side of the Marchesa, his cloak, heavy with the drenching water, became unfastened, and, falling in folds about his feet, discovered to the wonder-stricken spectators the graceful person of a very young man, with the sound of whose name the greater part of Europe was then ringing.
+“Amontillado!”
 
-No word spoke the deliverer. But the Marchesa! She will now receive her child—she will press it to her heart—she will cling to its little form, and smother it with her caresses. Alas! another’s arms have taken it from the stranger—another’s arms have taken it away, and borne it afar off, unnoticed, into the palace! And the Marchesa! Her lip—her beautiful lip trembles; tears are gathering in her eyes—those eyes which, like Pliny’s acanthus, are “soft and almost liquid.” Yes! tears are gathering in those eyes—and see! the entire woman thrills throughout the soul, and the statue has started into life! The pallor of the marble countenance, the swelling of the marble bosom, the very purity of the marble feet, we behold suddenly flushed over with a tide of ungovernable crimson; and a slight shudder quivers about her delicate frame, as a gentle air at Napoli about the rich silver lilies in the grass.
+“As you are engaged, I am on my way to Luchesi. If any one has a critical turn it is he. He will tell me—”
 
-Why should that lady blush! To this demand there is no answer—except that, having left, in the eager haste and terror of a mother’s heart, the privacy of her own boudoir, she has neglected to enthral her tiny feet in their slippers, and utterly forgotten to throw over her Venetian shoulders that drapery which is their due. What other possible reason could there have been for her so blushing?—for the glance of those wild appealing eyes?—for the unusual tumult of that throbbing bosom?—for the convulsive pressure of that trembling hand?—that hand which fell, as Mentoni turned into the palace, accidentally, upon the hand of the stranger. What reason could there have been for the low—the singularly low tone of those unmeaning words which the lady uttered hurriedly in bidding him adieu? “Thou hast conquered,” she said, or the murmurs of the water deceived me; “thou hast conquered—one hour after sunrise—we shall meet—so let it be!”
+“Luchesi cannot tell Amontillado from Sherry.”
 
- 
+“And yet some fools will have it that his taste is a match for your own.”
 
-The tumult had subsided, the lights had died away within the palace, and the stranger, whom I now recognized, stood alone upon the flags. He shook with inconceivable agitation, and his eye glanced around in search of a gondola. I could not do less than offer him the service of my own; and he accepted the civility. Having obtained an oar at the water-gate, we proceeded together to his residence, while he rapidly recovered his self-possession, and spoke of our former slight acquaintance in terms of great apparent cordiality.
+“Come, let us go.”
 
-There are some subjects upon which I take pleasure in being minute. The person of the stranger—let me call him by this title, who to all the world was still a stranger—the person of the stranger is one of these subjects. In height he might have been below rather than above the medium size: although there were moments of intense passion when his frame actually expanded and belied the assertion. The light, almost slender symmetry of his figure, promised more of that ready activity which he evinced at the Bridge of Sighs, than of that Herculean strength which he has been known to wield without an effort, upon occasions of more dangerous emergency. With the mouth and chin of a deity—singular, wild, full, liquid eyes, whose shadows varied from pure hazel to intense and brilliant jet—and a profusion of curling, black hair, from which a forehead of unusual breadth gleamed forth at intervals all light and ivory—his were features than which I have seen none more classically regular, except, perhaps, the marble ones of the Emperor Commodus. Yet his countenance was, nevertheless, one of those which all men have seen at some period of their lives, and have never afterwards seen again. It had no peculiar, it had no settled predominant expression to be fastened upon the memory; a countenance seen and instantly forgotten, but forgotten with a vague and never-ceasing desire of recalling it to mind. Not that the spirit of each rapid passion failed, at any time, to throw its own distinct image upon the mirror of that face—but that the mirror, mirror-like, retained no vestige of the passion, when the passion had departed.
+“Whither?”
 
-Upon leaving him on the night of our adventure, he solicited me, in what I thought an urgent manner, to call upon him very early the next morning. Shortly after sunrise, I found myself accordingly at his Palazzo, one of those huge structures of gloomy, yet fantastic pomp, which tower above the waters of the Grand Canal in the vicinity of the Rialto. I was shown up a broad winding staircase of mosaics, into an apartment whose unparalleled splendor burst through the opening door with an actual glare, making me blind and dizzy with luxuriousness.
+“To your vaults.”
 
-I knew my acquaintance to be wealthy. Report had spoken of his possessions in terms which I had even ventured to call terms of ridiculous exaggeration. But as I gazed about me, I could not bring myself to believe that the wealth of any subject in Europe could have supplied the princely magnificence which burned and blazed around.
+“My friend, no; I will not impose upon your good nature. I perceive you have an engagement. Luchesi—”
 
-Although, as I say, the sun had arisen, yet the room was still brilliantly lighted up. I judge from this circumstance, as well as from an air of exhaustion in the countenance of my friend, that he had not retired to bed during the whole of the preceding night. In the architecture and embellishments of the chamber, the evident design had been to dazzle and astound. Little attention had been paid to the decora of what is technically called keeping, or to the proprieties of nationality. The eye wandered from object to object, and rested upon none—neither the grotesques of the Greek painters, nor the sculptures of the best Italian days, nor the huge carvings of untutored Egypt. Rich draperies in every part of the room trembled to the vibration of low, melancholy music, whose origin was not to be discovered. The senses were oppressed by mingled and conflicting perfumes, reeking up from strange convolute censers, together with multitudinous flaring and flickering tongues of emerald and violet fire. The rays of the newly risen sun poured in upon the whole, through windows, formed each of a single pane of crimson-tinted glass. Glancing to and fro, in a thousand reflections, from curtains which rolled from their cornices like cataracts of molten silver, the beams of natural glory mingled at length fitfully with the artificial light, and lay weltering in subdued masses upon a carpet of rich, liquid-looking cloth of Chili gold.
+“I have no engagement;—come.”
 
-“Ha! ha! ha!—ha! ha! ha!”—laughed the proprietor, motioning me to a seat as I entered the room, and throwing himself back at full-length upon an ottoman. “I see,” said he, perceiving that I could not immediately reconcile myself to the bienseance of so singular a welcome—“I see you are astonished at my apartment—at my statues—my pictures—my originality of conception in architecture and upholstery! absolutely drunk, eh, with my magnificence? But pardon me, my dear sir, (here his tone of voice dropped to the very spirit of cordiality,) pardon me for my uncharitable laughter. You appeared so utterly astonished. Besides, some things are so completely ludicrous, that a man must laugh or die. To die laughing, must be the most glorious of all glorious deaths! Sir Thomas More—a very fine man was Sir Thomas More—Sir Thomas More died laughing, you remember. Also in the Absurdities of Ravisius Textor, there is a long list of characters who came to the same magnificent end. Do you know, however,” continued he musingly, “that at Sparta (which is now Palæochori,) at Sparta, I say, to the west of the citadel, among a chaos of scarcely visible ruins, is a kind of socle, upon which are still legible the letters ΛΑΞΜ. They are undoubtedly part of ΓΕΛΑΞΜΑ. Now, at Sparta were a thousand temples and shrines to a thousand different divinities. How exceedingly strange that the altar of Laughter should have survived all the others! But in the present instance,” he resumed, with a singular alteration of voice and manner, “I have no right to be merry at your expense. You might well have been amazed. Europe cannot produce anything so fine as this, my little regal cabinet. My other apartments are by no means of the same order—mere ultras of fashionable insipidity. This is better than fashion—is it not? Yet this has but to be seen to become the rage—that is, with those who could afford it at the cost of their entire patrimony. I have guarded, however, against any such profanation. With one exception, you are the only human being besides myself and my valet, who has been admitted within the mysteries of these imperial precincts, since they have been bedizened as you see!”
+“My friend, no. It is not the engagement, but the severe cold with which I perceive you are afflicted. The vaults are insufferably damp. They are encrusted with nitre.”
 
-I bowed in acknowledgment—for the overpowering sense of splendor and perfume, and music, together with the unexpected eccentricity of his address and manner, prevented me from expressing, in words, my appreciation of what I might have construed into a compliment.
+“Let us go, nevertheless. The cold is merely nothing. Amontillado! You have been imposed upon. And as for Luchesi, he cannot distinguish Sherry from Amontillado.”
 
-“Here,” he resumed, arising and leaning on my arm as he sauntered around the apartment, “here are paintings from the Greeks to Cimabue, and from Cimabue to the present hour. Many are chosen, as you see, with little deference to the opinions of Virtu. They are all, however, fitting tapestry for a chamber such as this. Here, too, are some chefs d’oeuvre of the unknown great; and here, unfinished designs by men, celebrated in their day, whose very names the perspicacity of the academies has left to silence and to me. What think you,” said he, turning abruptly as he spoke—“what think you of this Madonna della Pieta?”
+Thus speaking, Fortunato possessed himself of my arm; and putting on a mask of black silk and drawing a roquelaire closely about my person, I suffered him to hurry me to my palazzo.
 
-“It is Guido’s own!” I said, with all the enthusiasm of my nature, for I had been poring intently over its surpassing loveliness. “It is Guido’s own!—how could you have obtained it?—she is undoubtedly in painting what the Venus is in sculpture.”
+There were no attendants at home; they had absconded to make merry in honour of the time. I had told them that I should not return until the morning, and had given them explicit orders not to stir from the house. These orders were sufficient, I well knew, to insure their immediate disappearance, one and all, as soon as my back was turned.
 
-“Ha!” said he thoughtfully, “the Venus—the beautiful Venus?—the Venus of the Medici?—she of the diminutive head and the gilded hair? Part of the left arm (here his voice dropped so as to be heard with difficulty,) and all the right, are restorations; and in the coquetry of that right arm lies, I think, the quintessence of all affectation. Give me the Canova! The Apollo, too, is a copy—there can be no doubt of it—blind fool that I am, who cannot behold the boasted inspiration of the Apollo! I cannot help—pity me!—I cannot help preferring the Antinous. Was it not Socrates who said that the statuary found his statue in the block of marble? Then Michael Angelo was by no means original in his couplet—
+I took from their sconces two flambeaux, and giving one to Fortunato, bowed him through several suites of rooms to the archway that led into the vaults. I passed down a long and winding staircase, requesting him to be cautious as he followed. We came at length to the foot of the descent, and stood together upon the damp ground of the catacombs of the Montresors.
 
- 
+The gait of my friend was unsteady, and the bells upon his cap jingled as he strode.
 
-’Non ha l’ottimo artista alcun concetto
+“The pipe,” he said.
 
-Che un marmo solo in se non circunscriva.’”
+“It is farther on,” said I; “but observe the white web-work which gleams from these cavern walls.”
 
- 
+He turned towards me, and looked into my eyes with two filmy orbs that distilled the rheum of intoxication.
 
-It has been, or should be remarked, that, in the manner of the true gentleman, we are always aware of a difference from the bearing of the vulgar, without being at once precisely able to determine in what such difference consists. Allowing the remark to have applied in its full force to the outward demeanor of my acquaintance, I felt it, on that eventful morning, still more fully applicable to his moral temperament and character. Nor can I better define that peculiarity of spirit which seemed to place him so essentially apart from all other human beings, than by calling it a habit of intense and continual thought, pervading even his most trivial actions—intruding upon his moments of dalliance—and interweaving itself with his very flashes of merriment—like adders which writhe from out the eyes of the grinning masks in the cornices around the temples of Persepolis.
+“Nitre?” he asked, at length.
 
-I could not help, however, repeatedly observing, through the mingled tone of levity and solemnity with which he rapidly descanted upon matters of little importance, a certain air of trepidation—a degree of nervous unction in action and in speech—an unquiet excitability of manner which appeared to me at all times unaccountable, and upon some occasions even filled me with alarm. Frequently, too, pausing in the middle of a sentence whose commencement he had apparently forgotten, he seemed to be listening in the deepest attention, as if either in momentary expectation of a visitor, or to sounds which must have had existence in his imagination alone.
+“Nitre,” I replied. “How long have you had that cough?”
 
-It was during one of these reveries or pauses of apparent abstraction, that, in turning over a page of the poet and scholar Politian’s beautiful tragedy “The Orfeo,” (the first native Italian tragedy,) which lay near me upon an ottoman, I discovered a passage underlined in pencil. It was a passage towards the end of the third act—a passage of the most heart-stirring excitement—a passage which, although tainted with impurity, no man shall read without a thrill of novel emotion—no woman without a sigh. The whole page was blotted with fresh tears; and, upon the opposite interleaf, were the following English lines, written in a hand so very different from the peculiar characters of my acquaintance, that I had some difficulty in recognising it as his own:—
+“Ugh! ugh! ugh!—ugh! ugh! ugh!—ugh! ugh! ugh!—ugh! ugh! ugh!—ugh! ugh! ugh!”
 
- 
+My poor friend found it impossible to reply for many minutes.
 
-Thou wast that all to me, love,
+“It is nothing,” he said, at last.
 
-    For which my soul did pine—
+“Come,” I said, with decision, “we will go back; your health is precious. You are rich, respected, admired, beloved; you are happy, as once I was. You are a man to be missed. For me it is no matter. We will go back; you will be ill, and I cannot be responsible. Besides, there is Luchesi—”
 
-A green isle in the sea, love,
+“Enough,” he said; “the cough’s a mere nothing; it will not kill me. I shall not die of a cough.”
 
-    A fountain and a shrine,
+“True—true,” I replied; “and, indeed, I had no intention of alarming you unnecessarily—but you should use all proper caution. A draught of this Medoc will defend us from the damps.
 
-All wreathed with fairy fruits and flowers;
+Here I knocked off the neck of a bottle which I drew from a long row of its fellows that lay upon the mould.
 
-    And all the flowers were mine.
+“Drink,” I said, presenting him the wine.
 
- 
+He raised it to his lips with a leer. He paused and nodded to me familiarly, while his bells jingled.
 
-Ah, dream too bright to last!
+“I drink,” he said, “to the buried that repose around us.”
 
-    Ah, starry Hope, that didst arise
+“And I to your long life.”
 
-But to be overcast!
+He again took my arm, and we proceeded.
 
-    A voice from out the Future cries,
+“These vaults,” he said, “are extensive.”
 
-“Onward!”—but o’er the Past
+“The Montresors,” I replied, “were a great and numerous family.”
 
-    (Dim gulf!) my spirit hovering lies,
+“I forget your arms.”
 
-Mute—motionless—aghast!
+“A huge human foot d’or, in a field azure; the foot crushes a serpent rampant whose fangs are imbedded in the heel.”
 
- 
+“And the motto?”
 
-For alas! alas! with me
+“Nemo me impune lacessit.”
 
-    The light of life is o’er.
+“Good!” he said.
 
-“No more—no more—no more,”
+The wine sparkled in his eyes and the bells jingled. My own fancy grew warm with the Medoc. We had passed through long walls of piled skeletons, with casks and puncheons intermingling, into the inmost recesses of the catacombs. I paused again, and this time I made bold to seize Fortunato by an arm above the elbow.
 
-    (Such language holds the solemn sea
+“The nitre!” I said; “see, it increases. It hangs like moss upon the vaults. We are below the river’s bed. The drops of moisture trickle among the bones. Come, we will go back ere it is too late. Your cough—”
 
-To the sands upon the shore,)
+“It is nothing,” he said; “let us go on. But first, another draught of the Medoc.”
 
-    Shall bloom the thunder-blasted tree,
+I broke and reached him a flagon of De Grâve. He emptied it at a breath. His eyes flashed with a fierce light. He laughed and threw the bottle upwards with a gesticulation I did not understand.
 
-Or the stricken eagle soar!
+I looked at him in surprise. He repeated the movement—a grotesque one.
 
- 
+“You do not comprehend?” he said.
 
-Now all my hours are trances;
+“Not I,” I replied.
 
-    And all my nightly dreams
+“Then you are not of the brotherhood.”
 
-Are where the dark eye glances,
+“How?”
 
-    And where thy footstep gleams,
+“You are not of the masons.”
 
-In what ethereal dances,
+“Yes, yes,” I said; “yes, yes.”
 
-    By what Italian streams.
+“You? Impossible! A mason?”
 
- 
+“A mason,” I replied.
 
-Alas! for that accursed time
+“A sign,” he said, “a sign.”
 
-    They bore thee o’er the billow,
+“It is this,” I answered, producing a trowel from beneath the folds of my roquelaire.
 
-From Love to titled age and crime,
+“You jest,” he exclaimed, recoiling a few paces. “But let us proceed to the Amontillado.”
 
-    And an unholy pillow!—
+“Be it so,” I said, replacing the tool beneath the cloak and again offering him my arm. He leaned upon it heavily. We continued our route in search of the Amontillado. We passed through a range of low arches, descended, passed on, and descending again, arrived at a deep crypt, in which the foulness of the air caused our flambeaux rather to glow than flame.
 
-From me, and from our misty clime,
+At the most remote end of the crypt there appeared another less spacious. Its walls had been lined with human remains, piled to the vault overhead, in the fashion of the great catacombs of Paris. Three sides of this interior crypt were still ornamented in this manner. From the fourth side the bones had been thrown down, and lay promiscuously upon the earth, forming at one point a mound of some size. Within the wall thus exposed by the displacing of the bones, we perceived a still interior crypt or recess, in depth about four feet, in width three, in height six or seven. It seemed to have been constructed for no especial use within itself, but formed merely the interval between two of the colossal supports of the roof of the catacombs, and was backed by one of their circumscribing walls of solid granite.
 
-    Where weeps the silver willow!
+It was in vain that Fortunato, uplifting his dull torch, endeavoured to pry into the depth of the recess. Its termination the feeble light did not enable us to see.
 
- 
+“Proceed,” I said; “herein is the Amontillado. As for Luchesi—”
 
-That these lines were written in English—a language with which I had not believed their author acquainted—afforded me little matter for surprise. I was too well aware of the extent of his acquirements, and of the singular pleasure he took in concealing them from observation, to be astonished at any similar discovery; but the place of date, I must confess, occasioned me no little amazement. It had been originally written London, and afterwards carefully overscored—not, however, so effectually as to conceal the word from a scrutinizing eye. I say, this occasioned me no little amazement; for I well remember that, in a former conversation with a friend, I particularly inquired if he had at any time met in London the Marchesa di Mentoni, (who for some years previous to her marriage had resided in that city,) when his answer, if I mistake not, gave me to understand that he had never visited the metropolis of Great Britain. I might as well here mention, that I have more than once heard, (without, of course, giving credit to a report involving so many improbabilities,) that the person of whom I speak, was not only by birth, but in education, an Englishman.
+“He is an ignoramus,” interrupted my friend, as he stepped unsteadily forward, while I followed immediately at his heels. In niche, and finding an instant he had reached the extremity of the niche, and finding his progress arrested by the rock, stood stupidly bewildered. A moment more and I had fettered him to the granite. In its surface were two iron staples, distant from each other about two feet, horizontally. From one of these depended a short chain, from the other a padlock. Throwing the links about his waist, it was but the work of a few seconds to secure it. He was too much astounded to resist. Withdrawing the key I stepped back from the recess.
 
- 
+“Pass your hand,” I said, “over the wall; you cannot help feeling the nitre. Indeed, it is very damp. Once more let me implore you to return. No? Then I must positively leave you. But I must first render you all the little attentions in my power.”
 
-“There is one painting,” said he, without being aware of my notice of the tragedy—“there is still one painting which you have not seen.” And throwing aside a drapery, he discovered a full-length portrait of the Marchesa Aphrodite.
+“The Amontillado!” ejaculated my friend, not yet recovered from his astonishment.
 
-Human art could have done no more in the delineation of her superhuman beauty. The same ethereal figure which stood before me the preceding night upon the steps of the Ducal Palace, stood before me once again. But in the expression of the countenance, which was beaming all over with smiles, there still lurked (incomprehensible anomaly!) that fitful stain of melancholy which will ever be found inseparable from the perfection of the beautiful. Her right arm lay folded over her bosom. With her left she pointed downward to a curiously fashioned vase. One small, fairy foot, alone visible, barely touched the earth; and, scarcely discernible in the brilliant atmosphere which seemed to encircle and enshrine her loveliness, floated a pair of the most delicately imagined wings. My glance fell from the painting to the figure of my friend, and the vigorous words of Chapman’s Bussy D’Ambois, quivered instinctively upon my lips:
+“True,” I replied; “the Amontillado.”
 
- 
+As I said these words I busied myself among the pile of bones of which I have before spoken. Throwing them aside, I soon uncovered a quantity of building stone and mortar. With these materials and with the aid of my trowel, I began vigorously to wall up the entrance of the niche.
 
-    “He is up
+I had scarcely laid the first tier of the masonry when I discovered that the intoxication of Fortunato had in a great measure worn off. The earliest indication I had of this was a low moaning cry from the depth of the recess. It was not the cry of a drunken man. There was then a long and obstinate silence. I laid the second tier, and the third, and the fourth; and then I heard the furious vibrations of the chain. The noise lasted for several minutes, during which, that I might hearken to it with the more satisfaction, I ceased my labours and sat down upon the bones. When at last the clanking subsided, I resumed the trowel, and finished without interruption the fifth, the sixth, and the seventh tier. The wall was now nearly upon a level with my breast. I again paused, and holding the flambeaux over the mason-work, threw a few feeble rays upon the figure within.
 
-There like a Roman statue! He will stand
+A succession of loud and shrill screams, bursting suddenly from the throat of the chained form, seemed to thrust me violently back. For a brief moment I hesitated, I trembled. Unsheathing my rapier, I began to grope with it about the recess; but the thought of an instant reassured me. I placed my hand upon the solid fabric of the catacombs, and felt satisfied. I reapproached the wall; I replied to the yells of him who clamoured. I re-echoed, I aided, I surpassed them in volume and in strength. I did this, and the clamourer grew still.
 
-Till Death hath made him marble!”
+It was now midnight, and my task was drawing to a close. I had completed the eighth, the ninth and the tenth tier. I had finished a portion of the last and the eleventh; there remained but a single stone to be fitted and plastered in. I struggled with its weight; I placed it partially in its destined position. But now there came from out the niche a low laugh that erected the hairs upon my head. It was succeeded by a sad voice, which I had difficulty in recognizing as that of the noble Fortunato. The voice said—
 
- 
+“Ha! ha! ha!—he! he! he!—a very good joke, indeed—an excellent jest. We will have many a rich laugh about it at the palazzo—he! he! he!—over our wine—he! he! he!”
 
-“Come,” he said at length, turning towards a table of richly enamelled and massive silver, upon which were a few goblets fantastically stained, together with two large Etruscan vases, fashioned in the same extraordinary model as that in the foreground of the portrait, and filled with what I supposed to be Johannisberger. “Come,” he said, abruptly, “let us drink! It is early—but let us drink. It is indeed early,” he continued, musingly, as a cherub with a heavy golden hammer made the apartment ring with the first hour after sunrise: “It is indeed early—but what matters it? let us drink! Let us pour out an offering to yon solemn sun which these gaudy lamps and censers are so eager to subdue!” And, having made me pledge him in a bumper, he swallowed in rapid succession several goblets of the wine.
+“The Amontillado!” I said.
 
-“To dream,” he continued, resuming the tone of his desultory conversation, as he held up to the rich light of a censer one of the magnificent vases—“to dream has been the business of my life. I have therefore framed for myself, as you see, a bower of dreams. In the heart of Venice could I have erected a better? You behold around you, it is true, a medley of architectural embellishments. The chastity of Ionia is offended by antediluvian devices, and the sphynxes of Egypt are outstretched upon carpets of gold. Yet the effect is incongruous to the timid alone. Proprieties of place, and especially of time, are the bugbears which terrify mankind from the contemplation of the magnificent. Once I was myself a decorist; but that sublimation of folly has palled upon my soul. All this is now the fitter for my purpose. Like these arabesque censers, my spirit is writhing in fire, and the delirium of this scene is fashioning me for the wilder visions of that land of real dreams whither I am now rapidly departing.” He here paused abruptly, bent his head to his bosom, and seemed to listen to a sound which I could not hear. At length, erecting his frame, he looked upwards, and ejaculated the lines of the Bishop of Chichester:
+“He! he! he!—he! he! he!—yes, the Amontillado. But is it not getting late? Will not they be awaiting us at the palazzo, the Lady Fortunato and the rest? Let us be gone.”
 
- 
+“Yes,” I said, “let us be gone.”
 
-“Stay for me there! I will not fail
+“For the love of God, Montresor!”
 
-To meet thee in that hollow vale.”
+“Yes,” I said, “for the love of God!”
 
- 
+But to these words I hearkened in vain for a reply. I grew impatient. I called aloud—
 
-In the next instant, confessing the power of the wine, he threw himself at full-length upon an ottoman.
+“Fortunato!”
 
-A quick step was now heard upon the staircase, and a loud knock at the door rapidly succeeded. I was hastening to anticipate a second disturbance, when a page of Mentoni’s household burst into the room, and faltered out, in a voice choking with emotion, the incoherent words, “My mistress!—my mistress!—Poisoned!—poisoned! Oh, beautiful—oh, beautiful Aphrodite!”
+No answer. I called again—
 
-Bewildered, I flew to the ottoman, and endeavored to arouse the sleeper to a sense of the startling intelligence. But his limbs were rigid—his lips were livid—his lately beaming eyes were riveted in death. I staggered back towards the table—my hand fell upon a cracked and blackened goblet—and a consciousness of the entire and terrible truth flashed suddenly over my soul.)";
+“Fortunato!”
+
+No answer still. I thrust a torch through the remaining aperture and let it fall within. There came forth in return only a jingling of the bells. My heart grew sick; it was the dampness of the catacombs that made it so. I hastened to make an end of my labour. I forced the last stone into its position; I plastered it up. Against the new masonry I re-erected the old rampart of bones. For the half of a century no mortal has disturbed them. In pace requiescat!)";
 
 void demo(){
   set<char> alphabet = createAlphabetSet();
