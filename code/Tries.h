@@ -26,7 +26,7 @@ struct trie_node {
 //	The root node has no parent and no associated character.
 //	Each node maintains a numerical count indicating how many words end at that node.
 //	Words that share prefixes share nodes and separate at the end of their common prefix.
-//	The trie maintains a hierarchical tree structure with parent-child relationships and no cycles.
+//	The trie maintains a hierarchical trie structure with parent-child relationships and no cycles.
 class Tries {
 public:
   // Constructor for Tries 
@@ -54,10 +54,10 @@ public:
   // Extend this method with the number of items in the list for number of words with that prefix.
   vector<string> autocomplete(string prefix);
 
-  // Return the number of characters stored in the tree
+  // Return the number of characters stored in the trie
   int characters();
 
-  // Return the number of nodes in the tree (could be interesting for the radix tree where nodes and character counts would not be the same).
+  // Return the number of nodes in the trie (could be interesting for the radix trie where nodes and character counts would not be the same).
   int nodes();
 
   // Removes all words and nodes from the trie
@@ -89,10 +89,12 @@ public:
   trie_node* decompress_node(trie_node* node);
 
   //recursively call compress_node on all nodes that are eligible
-  void compress_tree(trie_node* subtree);
+  void compress_trie(trie_node* subtrie);
 
   //recursively call decompress_node on all nodes that are eligible
-  void decompress_tree(trie_node* subtree);
+  void decompress_trie(trie_node* subtrie);
+
+  void update_maps_keys(trie_node* subtrie);
 
   // additional public variables
   int num_words;

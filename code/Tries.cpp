@@ -131,12 +131,12 @@ int Tries::word_count(string word){
 
 // helper function for autocomplete that recursively maintains
 // prefixes and a vector of words
-void autocomplete_recurse(trie_node* subtree, string prefix,vector<string>& word_list){
-  if(subtree->is_word_end){
+void autocomplete_recurse(trie_node* subtrie, string prefix,vector<string>& word_list){
+  if(subtrie->is_word_end){
     word_list.push_back(prefix);
   }
-  for(auto i = subtree->map.begin(); i != subtree->map.end(); ++i){
-    autocomplete_recurse(subtree->map.at(i->first),prefix + i->first, word_list);
+  for(auto i = subtrie->map.begin(); i != subtrie->map.end(); ++i){
+    autocomplete_recurse(subtrie->map.at(i->first),prefix + i->first, word_list);
   }
 }
 
@@ -145,7 +145,7 @@ vector<string> Tries::autocomplete(string prefix){
   trie_node* cursor = root;
   string c;
   // iterate through the trie and the prefix to find where the 
-  // subtree for the prefix starts
+  // subtrie for the prefix starts
   for(int i = 0; i < prefix.size(); i++){
     c = prefix[i];
     if(cursor->map.find(c) == cursor->map.end()){
@@ -153,7 +153,7 @@ vector<string> Tries::autocomplete(string prefix){
     }
     cursor = cursor->map.at(c);
   }
-  // call helper function on the subtree where the prefix ended
+  // call helper function on the subtrie where the prefix ended
   autocomplete_recurse(cursor,prefix,word_list);
   return word_list;
 }
@@ -252,7 +252,7 @@ string Tries::print_node(trie_node* node){
 
 trie_node* Tries::compress_node(trie_node* parent){
   // if the node can't be compressed just return it
-  if(parent->map.size() != 1){
+  if(parent->map.size() != 1 || parent->is_root == true){
     return parent;
   }
   trie_node* child = parent->map.begin()->second;
@@ -276,6 +276,8 @@ trie_node* Tries::compress_node(trie_node* parent){
 
   // return the newly compressed node
   return parent;
+
+
 }
 
 trie_node* Tries::decompress_node(trie_node* original_node){
@@ -318,27 +320,52 @@ trie_node* Tries::decompress_node(trie_node* original_node){
 
 }
 
-void Tries::compress_tree(trie_node* subtree){
+void Tries::compress_trie(trie_node* subtrie){
 
-  if(subtree->map.size() == 1 && subtree->is_word_end == false && subtree->map.begin()->second->is_word_end == false ){
-    compress_node(subtree);
+  if(subtrie->map.size() == 1 && 
+  subtrie->is_word_end == false && 
+  subtrie->map.begin()->second->is_word_end == false &&
+  subtrie->is_root == false
+  ){
+    compress_node(subtrie);
   }
-  for(auto i = subtree->map.begin(); i != subtree->map.end(); i++ ){
-    compress_tree(i->second);
+  for(auto i = subtrie->map.begin(); i != subtrie->map.end(); i++ ){
+    compress_trie(i->second);
+  }
+
+  if(subtrie->is_root){
+    update_maps_keys(subtrie);
   }
   return;
 
 }
 
-void Tries::decompress_tree(trie_node* subtree){
-  if(subtree->characters.size() > 1){
-    decompress_node(subtree);
+void Tries::decompress_trie(trie_node* subtrie){
+  if(subtrie->characters.size() > 1){
+    decompress_node(subtrie);
   }
-  for(auto i = subtree->map.begin(); i != subtree->map.end(); i++ ){
-    decompress_tree(i->second);
+  for(auto i = subtrie->map.begin(); i != subtrie->map.end(); i++ ){
+    decompress_trie(i->second);
   }
   return;
 
+}
+
+void Tries::update_maps_keys(trie_node* subtrie){
+  vector <string> remove_list;
+  for(auto pair = subtrie->map.begin(); pair != subtrie->map.end(); pair++){
+    if(pair->first != pair->second->characters){
+      subtrie->map.insert(make_pair(pair->second->characters,pair->second));
+      remove_list.push_back(pair->first);
+    }
+  }
+  for(int i = 0; i < remove_list.size(); i++){
+    subtrie->map.erase(remove_list[i]);
+  }
+  for(auto pair = subtrie->map.begin(); pair != subtrie->map.end(); pair++){
+    update_maps_keys(pair->second);
+  }
+  return;
 }
 
 trie_node* Tries::get_root() { return root; }
